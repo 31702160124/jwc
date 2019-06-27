@@ -1,7 +1,10 @@
 package com.example.a18433.jwcmmvtc.utils;
 
 import android.util.Log;
+import android.widget.Toast;
 
+import com.example.a18433.jwcmmvtc.MainActivity;
+import com.example.a18433.jwcmmvtc.MyApplication;
 import com.example.a18433.jwcmmvtc.config.Constant;
 
 import org.jsoup.Jsoup;
@@ -32,13 +35,13 @@ import static com.example.a18433.jwcmmvtc.config.Constant.jwccookieheader;
 import static com.example.a18433.jwcmmvtc.config.Constant.jwcheader;
 import static com.example.a18433.jwcmmvtc.config.Constant.loginfrom;
 import static com.example.a18433.jwcmmvtc.config.Constant.loginoutfrom;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.addEerror;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.delEerror;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getLoginTime;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getUsername;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveIslogin;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setCookie;
-import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setLoginTime;
 
 public class jwcDao {
     private static volatile jwcDao jwcdao;
@@ -99,7 +102,11 @@ public class jwcDao {
      * 获取cookie是否过期
      */
     public Boolean cookieIsOverdue() {
-        Log.i("00110", new Date().getTime() - getLoginTime() + "用户isLoginFlg " + getLoginTime());
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Request request = new Request.Builder()
                 .url(Constant.cookieisoverUrl + getUsername())
                 .addHeader(jwccookieheader[0], getCookie())
@@ -118,6 +125,7 @@ public class jwcDao {
             //cookie 失效
             isOverdue = false;
             setCookie("");
+            addEerror();
             saveIslogin(false);
         } else {
             //cookie 可用
@@ -148,7 +156,7 @@ public class jwcDao {
         for (String str : cookies) {
             String s = str.substring(0, str.indexOf(";"));
             jwcCookie = s;
-            Log.i("Set-Cookie", "getCheckCodeImg: " + s+"14");
+            Log.i("Set-Cookie", "getCheckCodeImg: " + s + "14");
         }
         return data;
     }

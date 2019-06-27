@@ -16,7 +16,6 @@ import com.example.a18433.jwcmmvtc.Service.cookieService;
 import com.example.a18433.jwcmmvtc.fragment.LeftFragment;
 import com.example.a18433.jwcmmvtc.fragment.RightFragment;
 
-import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.addEerror;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.isFristlogin;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveIslogin;
@@ -47,6 +46,12 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                cookieService.getJwcdao().cookieIsOverdue();
+            }
+        }).start();
         try {
             init();
         } catch (Exception e) {
@@ -57,10 +62,9 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
     private void init() throws Exception {
         slp = findViewById(R.id.slp);
         if (isFristlogin()) {
-            showANDclose();
+            showANDelouse();
         }
         if (!userIsLogin()) {
-            MainACTIVITYFlg = false;
             loginOut();
         } else {
             MainACTIVITYFlg = true;
@@ -73,11 +77,7 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
             public void run() {
                 while (MainACTIVITYFlg) {
                     if (getCookie().isEmpty()) {
-                        MainACTIVITYFlg = true;
                         loginOut();
-                        addEerror();
-                    }else {
-                        saveIslogin(true);
                     }
                 }
             }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
 
     }
 
-    private void showANDclose()throws Exception {
+    private void showANDelouse() throws Exception {
         Thread.sleep(1000);
         slp.openPane();
         new Handler().postDelayed(new Runnable() {
@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
             }
         }).start();
         saveIslogin(false);
+        MainACTIVITYFlg = false;
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
@@ -126,9 +127,4 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        MainACTIVITYFlg = false;
-    }
 }

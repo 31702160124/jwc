@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jwcmmvtc.iml" filepath="$PROJECT_DIR$/jwcmmvtc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jwc.iml" filepath="$PROJECT_DIR$/jwc.iml" />
     </modules>
   </component>
 </project>

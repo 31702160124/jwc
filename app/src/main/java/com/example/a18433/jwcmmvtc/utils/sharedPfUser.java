@@ -68,14 +68,13 @@ public class sharedPfUser {
     public static String getCookie() {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
         String Cookie = sharedPreferences.getString("Cookie", "");
-        Cookie = Md5.JM(Cookie);
         return Cookie;
     }
 
     public static void setCookie(String Cookie) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("Cookie", Md5.JM(Cookie));
+        editor.putString("Cookie", Cookie);
         editor.commit();
     }
 
@@ -108,7 +107,7 @@ public class sharedPfUser {
 
     public static Long getLoginTime() {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
-        Long LoginTime = sharedPreferences.getLong("loginTime", 0);
+        Long LoginTime = sharedPreferences.getLong("loginTime", new Date().getTime());
         return LoginTime;
     }
 }

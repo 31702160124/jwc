@@ -10,6 +10,7 @@ import com.example.a18433.jwcmmvtc.utils.jwcDao;
 
 import java.util.Date;
 
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.addEerror;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getLoginTime;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setLoginTime;
@@ -20,6 +21,7 @@ public class cookieService extends Service {
     private static volatile Boolean isOverFlg = true;
     private static volatile Boolean flg = true;
     private String TAG = "cookieService";
+    private int time;
 
     @Nullable
     @Override
@@ -61,14 +63,14 @@ public class cookieService extends Service {
         while (flg) {
             int i = 1;
             while (isLoginFlg) {
-                Thread.sleep(5000);
+                Thread.sleep(10000);
                 if (!userIsLogin()) {
+                    Log.i(TAG, "用户未登录 isLoginFlg " + getLoginTime());
                     setLoginTime();
-                    Log.i(TAG, new Date().getTime() - getLoginTime() + "用户未登录 isLoginFlg " + getLoginTime());
                     isOverFlg = false;
                     isLoginFlg = true;
                 } else {
-                    Log.i(TAG, new Date().getTime() - getLoginTime() + "用户cokie isLoginFlg " + getLoginTime());
+                    Log.i(TAG, "用户cokie isLoginFlg " + getLoginTime());
                     Log.i(TAG, "用户已登录 isLoginFlg " + i++ + getCookie());
                     isLoginFlg = false;
                     isOverFlg = true;
@@ -76,15 +78,18 @@ public class cookieService extends Service {
             }
             //  1,800,000  半小时
             while (isOverFlg) {
+                Thread.sleep(10000);
                 if (!getCookie().isEmpty()) {
                     isLoginFlg = false;
                     isOverFlg = true;
-                    if (new Date().getTime() - getLoginTime() > 5000) {
-                        getJwcdao().cookieIsOverdue();
+                    Log.i(TAG, ++time + " cookie判断" + getLoginTime());
+                    if (new Date().getTime() - getLoginTime() > 1800000) {
+                        Log.i(TAG, time + "init: 6秒 执行cookie判断" + "  " + getLoginTime() + "" + getCookie());
                         setLoginTime();
+                        getJwcdao().cookieIsOverdue();
                     }
                 } else {
-                    Log.i(TAG, "cookie失效 isLoginFlg " + i++ + getCookie());
+                    Log.i(TAG, time + "cookie失效 isLoginFlg " + getCookie() + getLoginTime());
                     isOverFlg = false;
                     isLoginFlg = true;
                 }

@@ -27,8 +27,6 @@ import static com.example.a18433.jwcmmvtc.MyApplication.getContext;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getEerror;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getUserConfig;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveUserConfig;
-import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setLoginTime;
-
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText user, pwd, code;
@@ -157,7 +155,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         showHintsMsg(result[1]);
                         break;
                     case "ok":
-                        setLoginTime();
+                        MainActivity.MainACTIVITYFlg = true;
                         saveUserConfig(usestr, pwdstr);
                         try {
                             goToMain();
