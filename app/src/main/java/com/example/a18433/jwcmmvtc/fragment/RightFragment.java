@@ -1,31 +1,33 @@
 package com.example.a18433.jwcmmvtc.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.a18433.jwcmmvtc.MyApplication;
 import com.example.a18433.jwcmmvtc.R;
+import com.example.a18433.jwcmmvtc.fragment.other_fragment.studentinfo_fragment;
+import com.example.a18433.jwcmmvtc.fragment.other_fragment.xueshengchengji_fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setHPicSrc;
 
 public class RightFragment extends Fragment {
     private showPane slp;
     private TextView tx;
-    private ListView rlv;
-    private ArrayAdapter<String> arrayAdapter;
-    private List<String> data;
-    private String content;
+    private static studentinfo_fragment f1;
+    private static xueshengchengji_fragment f2;
+    private final static String TAG = "学生";
 
     @Nullable
     @Override
@@ -36,8 +38,6 @@ public class RightFragment extends Fragment {
     }
 
     public void init(View view) {
-        rlv = view.findViewById(R.id.lv_right);
-        whatLeftId(4);
         tx = view.findViewById(R.id.title_tv);
         view.findViewById(R.id.right_menu).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +55,6 @@ public class RightFragment extends Fragment {
 
     public void setTite(String content) {
         tx.setText(content);
-        this.content = content;
     }
 
     @Override
@@ -64,7 +63,40 @@ public class RightFragment extends Fragment {
         try {
             slp = (showPane) context;
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                f1 = new studentinfo_fragment();
+                f2 = new xueshengchengji_fragment();
+            }
+        }, 2000);
+    }
 
+    public void addFragments(int id) {
+        switch (id) {
+            case 0:
+                whatFragments(f1);
+                break;
+            case 1:
+                whatFragments(f2);
+                break;
+            case 2:
+//                whatFragments(id);
+                break;
+            case 3:
+//                whatFragments(id);
+                break;
+        }
+    }
+
+    @SuppressLint("RestrictedApi")
+    private void whatFragments(Fragment fragment) {
+        if (fragment.isAdded()) {
+            getFragmentManager().beginTransaction().show(fragment).commit();
+        } else {
+            getFragmentManager().beginTransaction().replace(R.id.other_fragment, fragment).commit();
         }
     }
 
@@ -72,40 +104,6 @@ public class RightFragment extends Fragment {
         void showPane();
 
         void loginOut();
-    }
-
-    public void whatLeftId(Integer i) {
-        switch (i) {
-            case 0:
-                arrayAdapter.clear();
-                break;
-            case 1:
-                getData(content, i);
-                arrayAdapter.notifyDataSetChanged();
-                break;
-            case 2:
-                getData(content, i);
-                arrayAdapter.notifyDataSetChanged();
-                break;
-            case 3:
-                getData(content, i);
-                arrayAdapter.notifyDataSetChanged();
-                break;
-            case 4:
-                data = new ArrayList<>();
-                data.add("欢迎你的到来" + getCookie());
-                arrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, data);
-                rlv.setAdapter(arrayAdapter);
-                break;
-        }
-    }
-
-    public void getData(String content, Integer i) {
-        data.removeAll(data);
-//        data = new ArrayList<>();
-        for (i = 0; i <= 20; i++) {
-            data.add(i + content);
-        }
     }
 
 }

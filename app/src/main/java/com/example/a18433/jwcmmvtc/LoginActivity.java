@@ -4,13 +4,10 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -24,9 +21,10 @@ import java.io.IOException;
 import java.util.Map;
 
 import static com.example.a18433.jwcmmvtc.MyApplication.getContext;
-import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getEerror;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getError;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getUserConfig;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveUserConfig;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setname;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText user, pwd, code;
@@ -57,8 +55,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void init() {
         MainActivity.MainACTIVITYFlg = false;
-        if (!getEerror().equals("用户点击退出")) {
-            Toast.makeText(this, getEerror(), Toast.LENGTH_SHORT).show();
+        if (!getError().equals("用户点击退出")) {
+            Toast.makeText(this, getError(), Toast.LENGTH_SHORT).show();
         }
         user = findViewById(R.id.user);
         pwd = findViewById(R.id.pwd);
@@ -99,8 +97,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void run() {
                 try {
-                    byte[] data = cookieService.getJwcdao().getCheckCodeImg();
-                    final Bitmap img = BitmapFactory.decodeByteArray(data, 0, data.length);
+                    final Bitmap img = cookieService.getJwcdao().getCheckCodeImg();
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -157,6 +154,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     case "ok":
                         MainActivity.MainACTIVITYFlg = true;
                         saveUserConfig(usestr, pwdstr);
+                        setname(result[1]);
                         try {
                             goToMain();
                         } catch (Exception e) {

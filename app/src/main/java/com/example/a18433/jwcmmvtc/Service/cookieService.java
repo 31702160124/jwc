@@ -6,11 +6,11 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.example.a18433.jwcmmvtc.MainActivity;
 import com.example.a18433.jwcmmvtc.utils.jwcDao;
 
 import java.util.Date;
 
-import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.addEerror;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getLoginTime;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setLoginTime;
@@ -70,6 +70,7 @@ public class cookieService extends Service {
                     isOverFlg = false;
                     isLoginFlg = true;
                 } else {
+                    Log.i("线程", "run: " + MainActivity.thread.isAlive() + "   " + MainActivity.thread.isDaemon() + "    " + MainActivity.thread.isInterrupted());
                     Log.i(TAG, "用户cokie isLoginFlg " + getLoginTime());
                     Log.i(TAG, "用户已登录 isLoginFlg " + i++ + getCookie());
                     isLoginFlg = false;

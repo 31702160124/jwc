@@ -44,16 +44,9 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/other_fragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ListView
-            android:id="@+id/lv_right"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#c26189"
-            android:stackFromBottom="true"></ListView>
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

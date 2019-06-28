@@ -1,31 +1,49 @@
 package com.example.a18433.jwcmmvtc;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
+import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.SlidingPaneLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.a18433.jwcmmvtc.Service.cookieService;
+import com.example.a18433.jwcmmvtc.entity.user;
 import com.example.a18433.jwcmmvtc.fragment.LeftFragment;
 import com.example.a18433.jwcmmvtc.fragment.RightFragment;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.isFristlogin;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveIslogin;
-import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveisFristlogin;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saversFristlogn;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.userIsLogin;
 
 
-public class MainActivity extends AppCompatActivity implements RightFragment.showPane, LeftFragment.closePane {
+public class MainActivity extends FragmentActivity implements RightFragment.showPane,
+        LeftFragment.closePane, SlidingPaneLayout.PanelSlideListener {
     public SlidingPaneLayout slp;
-    public volatile static Boolean MainACTIVITYFlg;
+    public volatile static Boolean MainACTIVITYFlg = true;
+    private static Bitmap bitmap;
+    private static Map<String, String> map;
+    private static ArrayList<user> dataList;
+    public static Thread thread;
+    private Handler handler;
+    private RightFragment rightFragment;
+    private LeftFragment leftFragment;
+    private static String TAG = "主activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +64,6 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                cookieService.getJwcdao().cookieIsOverdue();
-            }
-        }).start();
         try {
             init();
         } catch (Exception e) {
@@ -61,15 +73,16 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
 
     private void init() throws Exception {
         slp = findViewById(R.id.slp);
+        slp.setPanelSlideListener(this);
+        leftFragment = (LeftFragment) getSupportFragmentManager().findFragmentById(R.id.left_fragment);
+        rightFragment = (RightFragment) getSupportFragmentManager().findFragmentById(R.id.right_fragment);
         if (isFristlogin()) {
             showANDelouse();
         }
         if (!userIsLogin()) {
             loginOut();
         } else {
-            MainACTIVITYFlg = true;
-            saveisFristlogin(false);
-            Toast.makeText(MyApplication.getContext(), "教务管理系统欢迎你", Toast.LENGTH_SHORT).show();
+            studentLoginTrue();
         }
 
         new Thread(new Runnable() {
@@ -82,7 +95,24 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
                 }
             }
         }).start();
-
+        thread = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    bitmap = cookieService.getJwcdao().getHeadPic();
+                    setBitmap(bitmap);
+                    dataList = cookieService.getJwcdao().getZGrade();
+                    setDataList(dataList);
+                    map = cookieService.getJwcdao().getPersonalInfo();
+                    setMap(map);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread.setDaemon(true);
+        thread.start();
+        handler.post(thread);
     }
 
     private void showANDelouse() throws Exception {
@@ -122,9 +152,58 @@ public class MainActivity extends AppCompatActivity implements RightFragment.sho
         if (getCookie().isEmpty()) {
             loginOut();
         } else {
-            RightFragment rightFragment = (RightFragment) getSupportFragmentManager().findFragmentById(R.id.right_fragment);
             rightFragment.setTite(content);
         }
+    }
+
+    @Override
+    public void rightFaStates(int id) {
+        rightFragment.addFragments(id);
+    }
+
+    private void studentLoginTrue() {
+        MainACTIVITYFlg = true;
+        saversFristlogn(false);
+        Toast.makeText(MyApplication.getContext(), "教务管理系统欢迎你", Toast.LENGTH_SHORT).show();
+    }
+
+
+    public static void setBitmap(Bitmap bitmap) {
+        MainActivity.bitmap = bitmap;
+    }
+
+    public static void setMap(Map<String, String> map) {
+        MainActivity.map = map;
+    }
+
+    public static void setDataList(ArrayList<user> dataList) {
+        MainActivity.dataList = dataList;
+    }
+
+    public static Map<String, String> getMap() {
+        return map;
+    }
+
+    public static ArrayList<user> getDataList() {
+        return dataList;
+    }
+
+    public static Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    @Override
+    public void onPanelSlide(@NonNull View panel, float slideOffset) {
+
+    }
+
+    @Override
+    public void onPanelOpened(@NonNull View panel) {
+    }
+
+    @Override
+    public void onPanelClosed(@NonNull View panel) {
+
     }
 
 }

@@ -58,7 +58,7 @@ public class sharedPfUser {
         return islog;
     }
 
-    public static void saveisFristlogin(Boolean isFristlogin) {
+    public static void saversFristlogn(Boolean isFristlogin) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("isFristlogin", isFristlogin);
@@ -78,21 +78,21 @@ public class sharedPfUser {
         editor.commit();
     }
 
-    public static void addEerror() {
+    public static void addError() {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("Eerror", "Cookie过期");
         editor.commit();
     }
 
-    public static void delEerror() {
+    public static void delError() {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("Eerror", "用户点击退出");
         editor.commit();
     }
 
-    public static String getEerror() {
+    public static String getError() {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
         String error = sharedPreferences.getString("Eerror", "用户点击退出");
         return error;
@@ -110,4 +110,75 @@ public class sharedPfUser {
         Long LoginTime = sharedPreferences.getLong("loginTime", new Date().getTime());
         return LoginTime;
     }
+
+    public static String getname() {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        String name = sharedPreferences.getString("name", "");
+        return name;
+    }
+
+    public static void setname(String name) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("name", name);
+        editor.commit();
+    }
+
+    public static void setUrlbody(String i, String i1, String i2, String i3) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("grxxUrl", i);
+        editor.putString("cjcxUrl", i1);
+        editor.putString("mmxgUrl", i2);
+        editor.putString("bjkbcxUrl", i3);
+        editor.commit();
+    }
+
+    public static void delUrlbody() {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("grxxUrl", "");
+        editor.putString("cjcxUrl", "");
+        editor.putString("mmxgUrl", "");
+        editor.putString("bjkbcxUrl", "");
+        editor.commit();
+    }
+
+    public static String getGrxxUrl() {
+        sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        String grxxUrl = sharedPreferences.getString("grxxUrl", "");
+        return grxxUrl;
+    }
+
+    public static String getCjcxUrl() {
+        sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        String cjcxUrl = sharedPreferences.getString("cjcxUrl", "");
+        return cjcxUrl;
+    }
+
+    public static String getMmxgUrl() {
+        sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        String mmxgUrl = sharedPreferences.getString("mmxgUrl", "");
+        return mmxgUrl;
+    }
+
+    public static String getBjkbcxUrl() {
+        sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        String bjkbcxUrl = sharedPreferences.getString("bjkbcxUrl", "");
+        return bjkbcxUrl;
+    }
+
+    public static String getHPicSrc() {
+        sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        String HPicSrc = sharedPreferences.getString("photo", "");
+        return HPicSrc;
+    }
+
+    public static void setHPicSrc(String HPicSrc) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("photo", HPicSrc);
+        editor.commit();
+    }
+
 }
