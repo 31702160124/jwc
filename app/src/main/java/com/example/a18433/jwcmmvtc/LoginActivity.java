@@ -4,11 +4,15 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -140,7 +144,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void run() {
                         progressDialog.dismiss();
-                        code.setText("");
                     }
                 });
                 switch (result[0]) {
@@ -150,6 +153,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     case "user_locked":
                         showCheckImg();
                         showHintsMsg(result[1]);
+                        code.setText("");
                         break;
                     case "ok":
                         MainActivity.MainACTIVITYFlg = true;

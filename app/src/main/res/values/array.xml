@@ -3,7 +3,14 @@
     <string-array name="languages">
         <item>个人信息</item>
         <item>历年成绩</item>
-        <item>班级课表</item>
-        <item>修改密码</item>
+        <!--<item>班级课表</item>-->
+        <!--<item>修改密码</item>-->
+        <item>敬请期待</item>
+        <item>敬请期待</item>
+        <item>敬请期待</item>
+        <item>敬请期待</item>
+        <item>敬请期待</item>
+        <item>敬请期待</item>
+        <item>敬请期待</item>
     </string-array>
 </resources>

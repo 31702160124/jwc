@@ -1,39 +1,43 @@
 package com.example.a18433.jwcmmvtc.fragment;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.a18433.jwcmmvtc.MyApplication;
 import com.example.a18433.jwcmmvtc.R;
+import com.example.a18433.jwcmmvtc.fragment.other_fragment.other_fragment;
+import com.example.a18433.jwcmmvtc.fragment.other_fragment.studentchenji_fragment;
 import com.example.a18433.jwcmmvtc.fragment.other_fragment.studentinfo_fragment;
-import com.example.a18433.jwcmmvtc.fragment.other_fragment.xueshengchengji_fragment;
-
-import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setHPicSrc;
 
 public class RightFragment extends Fragment {
     private showPane slp;
     private TextView tx;
-    private static studentinfo_fragment f1;
-    private static xueshengchengji_fragment f2;
+    private studentinfo_fragment f1;
+    private studentchenji_fragment f2;
+    private other_fragment f0;
     private final static String TAG = "学生";
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        f0 = new other_fragment();
+        f1 = new studentinfo_fragment();
+        f2 = new studentchenji_fragment();
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.right_fragment, null);
         init(view);
+        setRetainInstance(true);
         return view;
     }
 
@@ -60,18 +64,7 @@ public class RightFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        try {
-            slp = (showPane) context;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                f1 = new studentinfo_fragment();
-                f2 = new xueshengchengji_fragment();
-            }
-        }, 2000);
+        slp = (showPane) context;
     }
 
     public void addFragments(int id) {
@@ -88,15 +81,21 @@ public class RightFragment extends Fragment {
             case 3:
 //                whatFragments(id);
                 break;
+            case 4:
+                whatFragments(f0);
+                break;
         }
     }
 
-    @SuppressLint("RestrictedApi")
     private void whatFragments(Fragment fragment) {
-        if (fragment.isAdded()) {
-            getFragmentManager().beginTransaction().show(fragment).commit();
-        } else {
-            getFragmentManager().beginTransaction().replace(R.id.other_fragment, fragment).commit();
+        if (fragment != null) {
+            if (fragment.isAdded()) {
+                Log.i(TAG, "whatFragments: add");
+                getFragmentManager().beginTransaction().show(fragment).commit();
+            } else {
+                Log.i(TAG, "whatFragments: ");
+                getFragmentManager().beginTransaction().replace(R.id.other_fragment, fragment).commit();
+            }
         }
     }
 

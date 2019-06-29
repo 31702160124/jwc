@@ -1,5 +1,6 @@
 package com.example.a18433.jwcmmvtc.fragment.other_fragment;
 
+import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,26 +9,53 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bin.david.form.core.SmartTable;
 import com.bin.david.form.data.column.Column;
 import com.bin.david.form.data.style.FontStyle;
 import com.bin.david.form.data.table.TableData;
-import com.example.a18433.jwcmmvtc.MainActivity;
+import com.example.a18433.jwcmmvtc.MyApplication;
 import com.example.a18433.jwcmmvtc.R;
 import com.example.a18433.jwcmmvtc.entity.user;
 
 import java.util.ArrayList;
 
-public class xueshengchengji_fragment extends Fragment {
+import static com.example.a18433.jwcmmvtc.fragment.workFragment.getDataList;
+
+public class studentchenji_fragment extends Fragment {
     private SmartTable<Integer> table;
-    private ArrayList<user> dataList;
+    private ArrayList<user> dataList = null;
+    private ProgressDialog progressDialog;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.xueshengchengji_fragment, null);
-        initTable(view);
+        final View view = inflater.inflate(R.layout.xueshengchengji_fragment, null);
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("查询中");
+        progressDialog.show();
+        dataList = getDataList();
+        if (dataList.isEmpty()) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    progressDialog.hide();
+                }
+            });
+            Toast.makeText(getActivity(), "获取历年成绩失败",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    // 初始化表格
+                    progressDialog.hide();
+                    initTable(view);
+                }
+            });
+        }
+        setRetainInstance(true);
         return view;
     }
 
@@ -35,8 +63,7 @@ public class xueshengchengji_fragment extends Fragment {
      * 初始化表格
      */
     private void initTable(View view) {
-        dataList = MainActivity.getDataList();
-        table =  view.findViewById(R.id.table);
+        table = view.findViewById(R.id.table);
         Column<String> year = new Column<>("学年", "year");
         Column<String> term = new Column<>("学期", "term");
         Column<String> code = new Column<>("课程代码", "code");
@@ -55,7 +82,6 @@ public class xueshengchengji_fragment extends Fragment {
 
         // 固定列
         term.setFixed(true);
-        name.setFixed(true);
         credit.setFixed(true);
         score.setFixed(true);
         TableData tableData = new TableData<user>("", dataList
