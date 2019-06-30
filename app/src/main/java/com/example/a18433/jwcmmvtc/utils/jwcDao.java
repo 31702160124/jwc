@@ -525,16 +525,16 @@ public class jwcDao {
     private ArrayList<kebiao> dealWithKebiaoHtml(String kebiao_html) {
         Document doc = Jsoup.parse(kebiao_html);
         // 从第二个tr开始
-        Elements esTr = doc.select(".blacktab tr:nth-child(n+3)");
+        Elements esTr = doc.select(".blacktab tr");
         ArrayList<kebiao> kebiaoList = new ArrayList<kebiao>();
         for (Element element : esTr) {
             Elements esTd = element.getElementsByTag("td");
-            String temp[] = new String[7];
+            String temp[] = new String[8];
             int j = 0;
             for (Element e : esTd) {
-                if (e.text().indexOf("第") != -1) {
-                    continue;
-                }
+//                if (e.text().indexOf("第") != -1) {
+//                    continue;
+//                }
                 if (e.text().indexOf("上") != -1) {
                     continue;
                 }
@@ -548,13 +548,14 @@ public class jwcDao {
                 j++;
             }
             kebiao kebiao = new kebiao();
-            kebiao.setMonday(temp[0]);
-            kebiao.setTuesday(temp[1]);
-            kebiao.setWednesday(temp[2]);
-            kebiao.setThursday(temp[3]);
-            kebiao.setFriday(temp[4]);
-            kebiao.setSaturday(temp[5]);
-            kebiao.setSunday(temp[6]);
+            kebiao.setTime(temp[0]);
+            kebiao.setMonday(temp[1]);
+            kebiao.setTuesday(temp[2]);
+            kebiao.setWednesday(temp[3]);
+            kebiao.setThursday(temp[4]);
+            kebiao.setFriday(temp[5]);
+            kebiao.setSaturday(temp[6]);
+            kebiao.setSunday(temp[7]);
             kebiaoList.add(kebiao);
         }
         return kebiaoList;

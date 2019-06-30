@@ -2,7 +2,15 @@ package com.example.a18433.jwcmmvtc.entity;
 
 public class kebiao {
     //学年
-    private String Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday;
+    private String Time,Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday;
+
+    public String getTime() {
+        return Time;
+    }
+
+    public void setTime(String time) {
+        Time = time;
+    }
 
     public String getMonday() {
         return Monday;

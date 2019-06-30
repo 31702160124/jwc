@@ -17,9 +17,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c5cd556-3209-40c4-ad17-7f09dc6cf173" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/xueshengkebiao_fragment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -29,16 +26,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/MyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/LeftFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/LeftFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/RightFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/RightFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/studentchenji_fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/studentchenji_fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/studentinfo_fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/studentinfo_fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/workFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/workFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/array.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/array.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,10 +67,16 @@
       <file leaf-file-name="xueshengkebiao_fragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="83" column="39" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
+            <state relative-caret-position="211">
+              <caret line="78" column="17" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1525#2292#0" expanded="true" />
+                <element signature="e#1821#2266#0" expanded="true" />
+                <element signature="e#1958#2174#0" expanded="true" />
+                <element signature="e#2173#2174#0" expanded="true" />
+                <element signature="e#2265#2266#0" expanded="true" />
+                <element signature="e#2291#2292#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2425,19 +2421,19 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/array.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/LeftFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/user.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/RightFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/workFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/studentchenji_fragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/xueshengxingxi_fragment.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/xueshengkebiao_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="507" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="506" />
     <option name="y" value="65" />
     <option name="width" value="945" />
     <option name="height" value="835" />
@@ -2599,85 +2595,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="fragment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="fragment" type="462c0819:PsiDirectoryNode" />
-              <item name="other_fragment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="jwc" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="jwc" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
-              <item name="values" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2709,6 +2626,52 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="jwc" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="jwc" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+              <item name="values" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2965,7 +2928,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="406" y="52" width="756" height="668" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="12" weight="0.32871014" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32846716" />
@@ -2974,7 +2938,6 @@
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5053981" side_tool="true" weight="0.53722626" />
-      <window_info anchor="right" id="Preview" order="4" sideWeight="0.4965326" weight="0.34278002" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" weight="0.61751825" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32871014" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32916668" />
@@ -2982,17 +2945,18 @@
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.49273255" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22874494" />
       <window_info anchor="bottom" id="Build" order="8" sideWeight="0.4979757" weight="0.3211679" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32871014" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32846716" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.32947975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49927744" weight="0.3994452" />
       <window_info anchor="right" id="Device File Explorer" order="5" sideWeight="0.5034674" side_tool="true" weight="0.23481782" />
       <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49927744" weight="0.3994452" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Preview" order="4" sideWeight="0.4965326" weight="0.34278002" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -3043,7 +3007,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/app/libs/smart.jar!/com/bin/david/form/core/SmartTable.java" />
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -3297,17 +3260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/core/SmartTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="221" column="33" selection-start-line="221" selection-start-column="16" selection-end-line="221" selection-end-column="33" />
-          <folding>
-            <element signature="e#6459#6460#0" expanded="true" />
-            <element signature="e#6488#6489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/array.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -3340,13 +3292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#RightFragment#0" />
-            <element signature="method#onAttach#0;class#RightFragment#0" />
-            <element signature="method#addFragments#0;class#RightFragment#0" />
-            <element signature="class#showPane#0;class#RightFragment#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3372,36 +3317,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="505" column="13" lean-forward="true" selection-start-line="505" selection-start-column="13" selection-end-line="505" selection-end-column="13" />
-          <folding>
-            <element signature="e#2972#2994#0" expanded="true" />
-            <element signature="method#cookieIsOverdue#0;class#jwcDao#0" />
-            <element signature="method#getCheckCodeImg#0;class#jwcDao#0" />
-            <element signature="method#findViewState#0;class#jwcDao#0" />
-            <element signature="method#Login#0;class#jwcDao#0" />
-            <element signature="method#jwcloginOut#0;class#jwcDao#0" />
-            <element signature="method#queryURL#0;class#jwcDao#0" />
-            <element signature="method#getPersonalInfo#0;class#jwcDao#0" />
-            <element signature="method#getHeadPic#0;class#jwcDao#0" />
-            <element signature="method#getZGrade#0;class#jwcDao#0" />
-            <element signature="method#dealWithGradeHtml#0;class#jwcDao#0" />
-            <element signature="e#19611#19617#0" expanded="true" />
-            <element signature="method#getKeBiao#0;class#jwcDao#0" />
-            <element signature="method#dealWithKebiaoHtml#0;class#jwcDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/studentinfo_fragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-25">
           <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-          <folding>
-            <element signature="method#setXx#0;class#studentinfo_fragment#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3412,50 +3331,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="4" column="81" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="81" />
-          <folding>
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#219#220#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#294#295#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
-            <element signature="e#944#945#0" expanded="true" />
-            <element signature="e#992#993#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1060#1061#0" expanded="true" />
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1133#1134#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/column/Column.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3450">
-          <caret line="264" column="24" selection-start-line="264" selection-start-column="16" selection-end-line="264" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -3479,12 +3354,112 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#933#934#0" expanded="true" />
+            <element signature="e#977#978#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1074#1075#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1157#1158#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+            <element signature="e#1219#1220#0" expanded="true" />
+            <element signature="e#1263#1264#0" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="531" column="40" selection-start-line="531" selection-start-column="40" selection-end-line="531" selection-end-column="40" />
+          <folding>
+            <element signature="e#2972#2994#0" expanded="true" />
+            <element signature="method#cookieIsOverdue#0;class#jwcDao#0" />
+            <element signature="method#getCheckCodeImg#0;class#jwcDao#0" />
+            <element signature="method#findViewState#0;class#jwcDao#0" />
+            <element signature="method#Login#0;class#jwcDao#0" />
+            <element signature="method#jwcloginOut#0;class#jwcDao#0" />
+            <element signature="method#queryURL#0;class#jwcDao#0" />
+            <element signature="method#getPersonalInfo#0;class#jwcDao#0" />
+            <element signature="method#getHeadPic#0;class#jwcDao#0" />
+            <element signature="method#getZGrade#0;class#jwcDao#0" />
+            <element signature="method#dealWithGradeHtml#0;class#jwcDao#0" />
+            <element signature="e#19611#19617#0" expanded="true" />
+            <element signature="method#getKeBiao#0;class#jwcDao#0" />
+            <element signature="e#21681#21689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-27/android.jar!/java/lang/Comparable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/core/SmartTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="430" column="34" selection-start-line="430" selection-start-column="34" selection-end-line="430" selection-end-column="34" />
+          <folding>
+            <element signature="e#6459#6460#0" expanded="true" />
+            <element signature="e#6488#6489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/column/Column.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding>
+            <element signature="e#15514#15515#0" expanded="true" />
+            <element signature="e#15544#15545#0" expanded="true" />
+            <element signature="e#15617#15618#0" expanded="true" />
+            <element signature="e#15648#15649#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="83" column="39" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
+        <state relative-caret-position="211">
+          <caret line="78" column="17" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1525#2292#0" expanded="true" />
+            <element signature="e#1821#2266#0" expanded="true" />
+            <element signature="e#1958#2174#0" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
+            <element signature="e#2291#2292#0" expanded="true" />
           </folding>
         </state>
       </provider>

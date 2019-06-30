@@ -67,6 +67,7 @@ public class xueshengkebiao_fragment extends Fragment {
      * 初始化表格
      */
     private void initTable(ArrayList<kebiao> dataList) {
+        Column<String> Time = new Column<>("Time", "Time");
         Column<String> Monday = new Column<>("Monday", "Monday");
         Column<String> Tuesday = new Column<>("Tuesday", "Tuesday");
         Column<String> Wednesday = new Column<>("Wednesday", "Wednesday");
@@ -75,14 +76,14 @@ public class xueshengkebiao_fragment extends Fragment {
         Column<String> Saturday = new Column<>("Saturday", "Saturday");
         Column<String> Sunday = new Column<>("Sunday", "Sunday");
 
-        TableData tableData = new TableData<kebiao>("", dataList
-                , Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
+        Time.setFixed(true);
+        TableData tableData = new TableData<kebiao>("", dataList,
+                Time, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
         table.getConfig()
                 .setContentStyle(new FontStyle(24, Color.rgb(68, 136, 187)))
                 .setColumnTitleStyle(new FontStyle(24, Color.BLACK))
                 .setHorizontalPadding(20)
-                .setVerticalPadding(20)
-                .setZoom((float) 2.00);
+                .setVerticalPadding(20);
 
         table.setTableData(tableData);
     }
