@@ -15,12 +15,14 @@ import com.example.a18433.jwcmmvtc.R;
 import com.example.a18433.jwcmmvtc.fragment.other_fragment.other_fragment;
 import com.example.a18433.jwcmmvtc.fragment.other_fragment.studentchenji_fragment;
 import com.example.a18433.jwcmmvtc.fragment.other_fragment.studentinfo_fragment;
+import com.example.a18433.jwcmmvtc.fragment.other_fragment.xueshengkebiao_fragment;
 
 public class RightFragment extends Fragment {
     private showPane slp;
     private TextView tx;
     private studentinfo_fragment f1;
     private studentchenji_fragment f2;
+    private xueshengkebiao_fragment f3;
     private other_fragment f0;
     private final static String TAG = "学生";
 
@@ -30,6 +32,7 @@ public class RightFragment extends Fragment {
         f0 = new other_fragment();
         f1 = new studentinfo_fragment();
         f2 = new studentchenji_fragment();
+        f3 = new xueshengkebiao_fragment();
     }
 
     @Nullable
@@ -76,7 +79,7 @@ public class RightFragment extends Fragment {
                 whatFragments(f2);
                 break;
             case 2:
-//                whatFragments(id);
+                whatFragments(f3);
                 break;
             case 3:
 //                whatFragments(id);

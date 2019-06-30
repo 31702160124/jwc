@@ -97,6 +97,13 @@ public class LeftFragment extends Fragment {
                         ListViewCase(sInfo, position);
                         break;
                     case 2:
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                cookieService.getJwcdao().getKeBiao();
+                            }
+                        }).start();
                         ListViewCase(sInfo, position);
                         break;
                     case 3:

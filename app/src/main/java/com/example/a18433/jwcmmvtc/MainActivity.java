@@ -156,7 +156,7 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
         MainACTIVITYFlg = true;
         rightFragment.addFragments(4);
         saversFristlogn(false);
-        Toast.makeText(MyApplication.getContext(), "教务管理系统欢迎你", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "教务管理系统欢迎你", Toast.LENGTH_SHORT).show();
         workFragment workFragment = (workFragment) getSupportFragmentManager().findFragmentByTag("work");
         if (workFragment == null) {
             workFragment = new workFragment();

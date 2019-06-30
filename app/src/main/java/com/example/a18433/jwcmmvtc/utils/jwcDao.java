@@ -11,6 +11,7 @@ import android.util.Log;
 import com.example.a18433.jwcmmvtc.MyApplication;
 import com.example.a18433.jwcmmvtc.R;
 import com.example.a18433.jwcmmvtc.config.Constant;
+import com.example.a18433.jwcmmvtc.entity.kebiao;
 import com.example.a18433.jwcmmvtc.entity.user;
 
 import org.jsoup.Jsoup;
@@ -45,6 +46,7 @@ import static com.example.a18433.jwcmmvtc.config.Constant.loginoutfrom;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.addError;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.delError;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.delUrlbody;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getBjkbcxUrl;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCjcxUrl;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getGrxxUrl;
@@ -466,8 +468,7 @@ public class jwcDao {
 
         ArrayList<user> gradeList = new ArrayList<user>();
 
-        for (Element element :
-                esTr) {
+        for (Element element : esTr) {
             Elements esTd = element.getElementsByTag("td");
             if (esTd.size() == 15) {
                 String temp[] = new String[15];
@@ -476,7 +477,6 @@ public class jwcDao {
                     temp[i] = e.text();
                     i++;
                 }
-
                 user grade = new user();
                 grade.setYear(temp[0]);
                 grade.setTerm(temp[1]);
@@ -498,7 +498,65 @@ public class jwcDao {
             }
         }
 
-        Log.i("tag", "dealWithGradeHtml-list-size: " + gradeList.size());
+//        Log.i("tag", "dealWithGradeHtml-list-size: " + gradeList.size());
         return gradeList;
+    }
+
+    /**
+     * 获取个人课表
+     */
+    public ArrayList<kebiao> getKeBiao() {
+
+        String strHTML = "";
+        Request request = new Request.Builder()
+                .url(Constant.baseurl + getBjkbcxUrl())
+                .addHeader(jwcheader[2], jwcheader[3])
+                .addHeader(jwcheader[4], getCookie())
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            strHTML = response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return dealWithKebiaoHtml(strHTML);
+    }
+
+    private ArrayList<kebiao> dealWithKebiaoHtml(String kebiao_html) {
+        Document doc = Jsoup.parse(kebiao_html);
+        // 从第二个tr开始
+        Elements esTr = doc.select(".blacktab tr:nth-child(n+3)");
+        ArrayList<kebiao> kebiaoList = new ArrayList<kebiao>();
+        for (Element element : esTr) {
+            Elements esTd = element.getElementsByTag("td");
+            String temp[] = new String[7];
+            int j = 0;
+            for (Element e : esTd) {
+                if (e.text().indexOf("第") != -1) {
+                    continue;
+                }
+                if (e.text().indexOf("上") != -1) {
+                    continue;
+                }
+                if (e.text().indexOf("下") != -1) {
+                    continue;
+                }
+                if (e.text().indexOf("晚") != -1) {
+                    continue;
+                }
+                temp[j] = e.text();
+                j++;
+            }
+            kebiao kebiao = new kebiao();
+            kebiao.setMonday(temp[0]);
+            kebiao.setTuesday(temp[1]);
+            kebiao.setWednesday(temp[2]);
+            kebiao.setThursday(temp[3]);
+            kebiao.setFriday(temp[4]);
+            kebiao.setSaturday(temp[5]);
+            kebiao.setSunday(temp[6]);
+            kebiaoList.add(kebiao);
+        }
+        return kebiaoList;
     }
 }

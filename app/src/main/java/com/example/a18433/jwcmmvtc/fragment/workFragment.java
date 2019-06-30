@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.a18433.jwcmmvtc.Service.cookieService;
+import com.example.a18433.jwcmmvtc.entity.kebiao;
 import com.example.a18433.jwcmmvtc.entity.user;
 
 import java.util.ArrayList;
@@ -21,6 +22,16 @@ import java.util.Map;
 public class workFragment extends Fragment {
     static Bitmap bitmap;
     static ArrayList<user> dataList;
+    static ArrayList<kebiao> kebiaoList;
+
+    public static ArrayList<kebiao> getKebiaoList() {
+        return kebiaoList;
+    }
+
+    public static void setKebiaoList(ArrayList<kebiao> kebiaoList) {
+        workFragment.kebiaoList = kebiaoList;
+    }
+
     static Map<String, String> map;
 
     public static Bitmap getBitmap() {
@@ -63,6 +74,8 @@ public class workFragment extends Fragment {
                     setDataList(dataList);
                     Map<String, String> map = cookieService.getJwcdao().getPersonalInfo();
                     setMap(map);
+                    ArrayList<kebiao> kebiaoList = cookieService.getJwcdao().getKeBiao();
+                    setKebiaoList(kebiaoList);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -13,8 +12,6 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +24,6 @@ import com.example.a18433.jwcmmvtc.Service.cookieService;
 import java.io.IOException;
 import java.util.Map;
 
-import static com.example.a18433.jwcmmvtc.MyApplication.getContext;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getError;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getUserConfig;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveUserConfig;
@@ -53,7 +49,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onFocusChange(View view, boolean hasFocus) {
                 Log.i("onFocusChange", "onFocusChange: " + view.getId() + hasFocus);
                 if (hasFocus) {
-                    InputMethodManager manager = ((InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE));
+                    InputMethodManager manager = ((InputMethodManager) getBaseContext().getSystemService(Context.INPUT_METHOD_SERVICE));
                     if (manager != null) {
                         manager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                         postLogin();
@@ -89,7 +85,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void goToMain() throws Exception {
-        Intent intent = new Intent(getContext(), MainActivity.class);
+        Intent intent = new Intent(getBaseContext(), MainActivity.class);
         startActivity(intent);
         finish();
     }
