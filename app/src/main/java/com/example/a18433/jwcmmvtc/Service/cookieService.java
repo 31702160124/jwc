@@ -60,6 +60,7 @@ public class cookieService extends Service {
     }
 
     private void init() throws Exception {
+        getJwcdao().cookieIsOverdue();
         while (flg) {
             int i = 1;
             while (isLoginFlg) {
@@ -70,8 +71,6 @@ public class cookieService extends Service {
                     isOverFlg = false;
                     isLoginFlg = true;
                 } else {
-                    Log.i("线程", "run: " + MainActivity.thread.isAlive() + "   " + MainActivity.thread.isDaemon() + "    " + MainActivity.thread.isInterrupted());
-                    Log.i(TAG, "用户cokie isLoginFlg " + getLoginTime());
                     Log.i(TAG, "用户已登录 isLoginFlg " + i++ + getCookie());
                     isLoginFlg = false;
                     isOverFlg = true;
@@ -79,12 +78,12 @@ public class cookieService extends Service {
             }
             //  1,800,000  半小时
             while (isOverFlg) {
-                Thread.sleep(10000);
+                Thread.sleep(5000);
                 if (!getCookie().isEmpty()) {
                     isLoginFlg = false;
                     isOverFlg = true;
                     Log.i(TAG, ++time + " cookie判断" + getLoginTime());
-                    if (new Date().getTime() - getLoginTime() > 1800000) {
+                    if (new Date().getTime() - getLoginTime() > 10000) {
                         Log.i(TAG, time + "init: 6秒 执行cookie判断" + "  " + getLoginTime() + "" + getCookie());
                         setLoginTime();
                         getJwcdao().cookieIsOverdue();

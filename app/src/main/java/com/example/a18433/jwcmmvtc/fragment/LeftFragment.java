@@ -103,7 +103,7 @@ public class LeftFragment extends Fragment {
                         ListViewCase(sInfo, position);
                         break;
                     default:
-                        ListViewCase("个人信息", 0);
+                        ListViewCase("教务管理系统", 4);
                         break;
                 }
             }

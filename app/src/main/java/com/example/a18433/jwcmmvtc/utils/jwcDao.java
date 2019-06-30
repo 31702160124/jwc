@@ -114,6 +114,7 @@ public class jwcDao {
      * 获取cookie是否过期
      */
     public Boolean cookieIsOverdue() {
+        Log.i("检查cookie", "cookieIsOverdue: ");
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -133,7 +134,7 @@ public class jwcDao {
         Boolean isOverdue;
         String str1 = "Object moved"; //html.contains(str1)
         String str2 = "正方教务管理系统";//!html.contains(str2)
-        if (!html.contains(str2)) {
+        if (html.contains(str1)) {
             //cookie 失效
             isOverdue = false;
             setCookie("");
@@ -293,9 +294,9 @@ public class jwcDao {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            setCookie("");
             setHPicSrc("");
             delUrlbody();
-            delError();
         }
     }
 

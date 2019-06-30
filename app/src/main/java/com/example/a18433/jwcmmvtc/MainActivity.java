@@ -24,6 +24,7 @@ import com.example.a18433.jwcmmvtc.fragment.RightFragment;
 import com.example.a18433.jwcmmvtc.fragment.other_fragment.other_fragment;
 import com.example.a18433.jwcmmvtc.fragment.workFragment;
 
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.delError;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.isFristlogin;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveIslogin;
@@ -110,7 +111,6 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
     }
 
     private void showANDelouse() throws Exception {
-        Thread.sleep(1000);
         slp.openPane();
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -133,6 +133,7 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
                 cookieService.getJwcdao().jwcloginOut();
             }
         }).start();
+        delError();
         saveIslogin(false);
         MainACTIVITYFlg = false;
         Intent intent = new Intent(this, LoginActivity.class);

@@ -1,5 +1,6 @@
 package com.example.a18433.jwcmmvtc;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +19,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a18433.jwcmmvtc.Service.cookieService;
@@ -28,6 +31,7 @@ import static com.example.a18433.jwcmmvtc.MyApplication.getContext;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getError;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getUserConfig;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveUserConfig;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setLoginTime;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setname;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -35,7 +39,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button login;
     private String codestr, usestr, pwdstr;
     private ImageView code_image;
+    private TextView Tv_err;
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,11 +63,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
+    @SuppressLint("NewApi")
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (!getError().equals("用户点击退出")) {
+            Tv_err.setText(getError());
+            Tv_err.setBackground(getResources().getDrawable(R.drawable.radio2));
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void init() {
         MainActivity.MainACTIVITYFlg = false;
-        if (!getError().equals("用户点击退出")) {
-            Toast.makeText(this, getError(), Toast.LENGTH_SHORT).show();
-        }
+        Tv_err = findViewById(R.id.Tv_err);
         user = findViewById(R.id.user);
         pwd = findViewById(R.id.pwd);
         code = findViewById(R.id.code);
@@ -89,6 +104,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login:
+                postLogin();
                 break;
             case R.id.code_image:
                 showCheckImg();
@@ -151,14 +167,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     case "pwd_error":
                     case "user_error":
                     case "user_locked":
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                code.setText("");
+                            }
+                        });
                         showCheckImg();
                         showHintsMsg(result[1]);
-                        code.setText("");
                         break;
                     case "ok":
                         MainActivity.MainACTIVITYFlg = true;
                         saveUserConfig(usestr, pwdstr);
                         setname(result[1]);
+                        setLoginTime();
                         try {
                             goToMain();
                         } catch (Exception e) {
