@@ -10,7 +10,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.bin.david.form.core.SmartTable;
 import com.bin.david.form.data.column.Column;
@@ -32,7 +31,7 @@ public class studentchenji_fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.xueshengchengji_fragment, null);
-        table = view.findViewById(R.id.table);
+        table = (SmartTable<Integer>) view.findViewById(R.id.table);
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("查询中");
         progressDialog.show();

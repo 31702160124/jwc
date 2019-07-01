@@ -1,11 +1,12 @@
 package com.example.a18433.jwcmmvtc.fragment;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,13 +73,13 @@ public class LeftFragment extends Fragment {
         return view;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void init(View view) {
-        name = view.findViewById(R.id.mane);
+        name = (TextView) view.findViewById(R.id.mane);
         name.setText(getname());
-        img_left_tv = view.findViewById(R.id.img_Left_tv);
-        img_left_tv.setBackgroundDrawable(Constant.getRandm(Constant.bgarray));
-        img_tv = view.findViewById(R.id.Student_image);
-        lv = view.findViewById(R.id.lv_left);
+        img_left_tv = (LinearLayout) view.findViewById(R.id.img_Left_tv);
+        img_tv = (ImageView) view.findViewById(R.id.Student_image);
+        lv = (ListView) view.findViewById(R.id.lv_left);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

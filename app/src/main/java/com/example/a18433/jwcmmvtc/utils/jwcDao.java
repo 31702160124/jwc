@@ -2,14 +2,8 @@ package com.example.a18433.jwcmmvtc.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.support.v4.content.res.ResourcesCompat;
-import android.util.Base64;
 import android.util.Log;
 
-import com.example.a18433.jwcmmvtc.MyApplication;
-import com.example.a18433.jwcmmvtc.R;
 import com.example.a18433.jwcmmvtc.config.Constant;
 import com.example.a18433.jwcmmvtc.entity.kebiao;
 import com.example.a18433.jwcmmvtc.entity.user;
@@ -19,7 +13,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,13 +37,13 @@ import static com.example.a18433.jwcmmvtc.config.Constant.jwcheader;
 import static com.example.a18433.jwcmmvtc.config.Constant.loginfrom;
 import static com.example.a18433.jwcmmvtc.config.Constant.loginoutfrom;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.addError;
-import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.delError;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.delUrlbody;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getBjkbcxUrl;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCjcxUrl;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getGrxxUrl;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getHPicSrc;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getMmxgUrl;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getUsername;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveIslogin;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setCookie;
@@ -498,7 +491,7 @@ public class jwcDao {
             }
         }
 
-//        Log.i("tag", "dealWithGradeHtml-list-size: " + gradeList.size());
+        //        Log.i("tag", "dealWithGradeHtml-list-size: " + gradeList.size());
         return gradeList;
     }
 
@@ -532,9 +525,9 @@ public class jwcDao {
             String temp[] = new String[8];
             int j = 0;
             for (Element e : esTd) {
-//                if (e.text().indexOf("第") != -1) {
-//                    continue;
-//                }
+                //                if (e.text().indexOf("第") != -1) {
+                //                    continue;
+                //                }
                 if (e.text().indexOf("上") != -1) {
                     continue;
                 }
@@ -560,4 +553,67 @@ public class jwcDao {
         }
         return kebiaoList;
     }
+
+
+    private String getChangpwdVss() {
+        Request request = new Request.Builder()
+                .url(Constant.baseurl + getMmxgUrl())
+                .addHeader(jwcheader[2], jwcheader[3])
+                .build();
+        String vss = null;
+        try {
+            Response response = client.newCall(request).execute();
+            vss = findViewState(response.body().string());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return vss;
+    }
+
+    /**
+     * 修改密码
+     *
+     * @param oldPwd 旧密码
+     * @param newPwd 新密码
+     * @return String result
+     */
+    public String changePwd(String oldPwd, String newPwd) {
+
+        String vss = getChangpwdVss();
+        if (vss == null) {
+            vss = getChangpwdVss();
+        }
+
+        RequestBody body = new FormBody.Builder()
+                .add("__VIEWSTATE", vss)
+                .add("TextBox2", oldPwd)
+                .add("TextBox3", newPwd)
+                .add("TextBox4", newPwd)
+                .add("Button1", "")
+                .build();
+        Request request = new Request.Builder()
+                .url(Constant.baseurl + getMmxgUrl())
+                .addHeader(jwcheader[2], jwcheader[3])
+                .post(body)
+                .build();
+
+        String html = "";
+        try {
+            Response response = client.newCall(request).execute();
+            html = response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String pattern = "<script language=\\'javascript\\'>alert\\(\\'(.*?)\\'\\);.*?</script>";
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(html);
+        String result = "";
+        if (m.find()) {
+            //            m.group();
+            result = m.group(1);
+        }
+        return result;
+    }
+
 }

@@ -19,7 +19,7 @@ public class other_fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.other_fragment, null);
-        img_tv = view.findViewById(R.id.img_tv);
+        img_tv = (ImageView) view.findViewById(R.id.img_tv);
         img_tv.setImageDrawable(Constant.getRandm(Constant.catarray));
         return view;
     }

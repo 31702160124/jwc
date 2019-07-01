@@ -3,25 +3,22 @@ package com.example.a18433.jwcmmvtc;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.SlidingPaneLayout;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.a18433.jwcmmvtc.Service.cookieService;
 import com.example.a18433.jwcmmvtc.config.Constant;
 import com.example.a18433.jwcmmvtc.fragment.LeftFragment;
 import com.example.a18433.jwcmmvtc.fragment.RightFragment;
-import com.example.a18433.jwcmmvtc.fragment.other_fragment.other_fragment;
+import com.example.a18433.jwcmmvtc.fragment.other_fragment.changpwd_fragment;
 import com.example.a18433.jwcmmvtc.fragment.workFragment;
 
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.delError;
@@ -33,7 +30,7 @@ import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.userIsLogin;
 
 
 public class MainActivity extends FragmentActivity implements RightFragment.showPane,
-        LeftFragment.closePane {
+        LeftFragment.closePane, changpwd_fragment.tuichu {
     public SlidingPaneLayout slp;
     public volatile static Boolean MainACTIVITYFlg = true;
     public static Thread thread;
@@ -67,7 +64,7 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
     }
 
     private void init() throws Exception {
-        slp = findViewById(R.id.slp);
+        slp = (SlidingPaneLayout) findViewById(R.id.slp);
         slp.setPanelSlideListener(new SlidingPaneLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(@NonNull View panel, float slideOffset) {
@@ -79,6 +76,7 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
 
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onPanelClosed(@NonNull View panel) {
                 getSupportFragmentManager()
@@ -169,4 +167,8 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
         super.onSaveInstanceState(outState);
     }
 
+    @Override
+    public void tuichu() {
+        loginOut();
+    }
 }

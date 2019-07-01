@@ -10,8 +10,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.bin.david.form.core.SmartTable;
 import com.bin.david.form.data.column.Column;
@@ -19,7 +17,6 @@ import com.bin.david.form.data.style.FontStyle;
 import com.bin.david.form.data.table.TableData;
 import com.example.a18433.jwcmmvtc.R;
 import com.example.a18433.jwcmmvtc.entity.kebiao;
-import com.example.a18433.jwcmmvtc.entity.user;
 
 import java.util.ArrayList;
 
@@ -33,7 +30,7 @@ public class xueshengkebiao_fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.xueshengkebiao_fragment, null);
-        table = view.findViewById(R.id.kebiao_tv);
+        table = (SmartTable<Integer>) view.findViewById(R.id.kebiao_tv);
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("loading");
         progressDialog.show();

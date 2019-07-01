@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -16,10 +17,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a18433.jwcmmvtc.Service.cookieService;
+import com.example.a18433.jwcmmvtc.config.Constant;
 
 import java.io.IOException;
 import java.util.Map;
@@ -36,6 +39,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private String codestr, usestr, pwdstr;
     private ImageView code_image;
     private TextView Tv_err;
+    private LinearLayout login_tv;
+    private Handler handler;
+    private Runnable runnable;
 
     @SuppressLint("NewApi")
     @Override
@@ -48,12 +54,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 Log.i("onFocusChange", "onFocusChange: " + view.getId() + hasFocus);
+                InputMethodManager manager = ((InputMethodManager) getBaseContext().getSystemService(Context.INPUT_METHOD_SERVICE));
                 if (hasFocus) {
-                    InputMethodManager manager = ((InputMethodManager) getBaseContext().getSystemService(Context.INPUT_METHOD_SERVICE));
                     if (manager != null) {
                         manager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                         postLogin();
                     }
+                }else {
+                    manager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.SHOW_IMPLICIT);
                 }
             }
         });
@@ -72,13 +80,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void init() {
         MainActivity.MainACTIVITYFlg = false;
-        Tv_err = findViewById(R.id.Tv_err);
-        user = findViewById(R.id.user);
-        pwd = findViewById(R.id.pwd);
-        code = findViewById(R.id.code);
-        code_image = findViewById(R.id.code_image);
+        login_tv = (LinearLayout) findViewById(R.id.login_tv);
+        handler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                login_tv.setBackground(Constant.getRandm(Constant.loginarray));
+                handler.postDelayed(this,1000);
+            }
+        };
+        handler.postDelayed(runnable,5000);
+        Tv_err = (TextView) findViewById(R.id.Tv_err);
+        user = (EditText) findViewById(R.id.user);
+        pwd = (EditText) findViewById(R.id.pwd);
+        code = (EditText) findViewById(R.id.code);
+        code_image = (ImageView) findViewById(R.id.code_image);
         codestr = code.getText().toString().trim();
-        login = findViewById(R.id.login);
+        login = (Button) findViewById(R.id.login);
         login.setOnClickListener(this);
         code_image.setOnClickListener(this);
         showCheckImg();

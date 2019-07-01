@@ -6,20 +6,18 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.a18433.jwcmmvtc.R;
 
+import java.util.Map;
+
 import static com.example.a18433.jwcmmvtc.fragment.workFragment.getBitmap;
 import static com.example.a18433.jwcmmvtc.fragment.workFragment.getMap;
-
-import java.util.Map;
 
 public class studentinfo_fragment extends Fragment {
     private TextView tv_xh, tv_xm, tv_sex, tv_zzmm, tv_xi, tv_zymc, tv_xzb, tv_dqszj, tv_rxrq, tv_xlcc, tv_xxxs, tv_xz, tv_xjzt;
@@ -60,20 +58,20 @@ public class studentinfo_fragment extends Fragment {
     }
 
     private void init(View view) {
-        tv_xh = view.findViewById(R.id.tv_xh);
-        tv_xm = view.findViewById(R.id.tv_xm);
-        tv_sex = view.findViewById(R.id.tv_sex);
-        tv_zzmm = view.findViewById(R.id.tv_zzmm);
-        tv_xi = view.findViewById(R.id.tv_xi);
-        tv_zymc = view.findViewById(R.id.tv_zymc);
-        tv_xzb = view.findViewById(R.id.tv_xzb);
-        tv_dqszj = view.findViewById(R.id.tv_dqszj);
-        tv_rxrq = view.findViewById(R.id.tv_rxrq);
-        tv_xlcc = view.findViewById(R.id.tv_xlcc);
-        tv_xxxs = view.findViewById(R.id.tv_xxxs);
-        tv_xz = view.findViewById(R.id.tv_xz);
-        tv_xjzt = view.findViewById(R.id.tv_xjzt);
-        img = view.findViewById(R.id.iv_pic);
+        tv_xh = (TextView) view.findViewById(R.id.tv_xh);
+        tv_xm = (TextView) view.findViewById(R.id.tv_xm);
+        tv_sex = (TextView) view.findViewById(R.id.tv_sex);
+        tv_zzmm = (TextView) view.findViewById(R.id.tv_zzmm);
+        tv_xi = (TextView) view.findViewById(R.id.tv_xi);
+        tv_zymc = (TextView) view.findViewById(R.id.tv_zymc);
+        tv_xzb = (TextView) view.findViewById(R.id.tv_xzb);
+        tv_dqszj = (TextView) view.findViewById(R.id.tv_dqszj);
+        tv_rxrq = (TextView) view.findViewById(R.id.tv_rxrq);
+        tv_xlcc = (TextView) view.findViewById(R.id.tv_xlcc);
+        tv_xxxs = (TextView) view.findViewById(R.id.tv_xxxs);
+        tv_xz = (TextView) view.findViewById(R.id.tv_xz);
+        tv_xjzt = (TextView) view.findViewById(R.id.tv_xjzt);
+        img = (ImageView) view.findViewById(R.id.iv_pic);
         img.setImageBitmap(getBitmap());
     }
 
