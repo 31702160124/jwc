@@ -551,6 +551,9 @@ public class jwcDao {
             kebiao.setSunday(temp[7]);
             kebiaoList.add(kebiao);
         }
+
+        Log.i("课表", "dealWithKebiaoHtml: " + kebiaoList.get(0).getTime());
+
         return kebiaoList;
     }
 
@@ -614,7 +617,7 @@ public class jwcDao {
             //            m.group();
             result = m.group(1);
         }
-        Log.i("买买买", "changePwd: "+result);
+        Log.i("买买买", "changePwd: " + result);
         return result;
     }
 

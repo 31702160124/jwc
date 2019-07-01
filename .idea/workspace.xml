@@ -6,7 +6,8 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="课表是" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="CMakeSettings">
@@ -15,51 +16,28 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8f0ab3a-71a9-4b3b-861e-b51bbc4b66a6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_touch.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/login7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/login_ed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" afterDir="false" />
+    <list default="true" id="790db87d-1aa1-4958-b12e-b5ba7af0cf44" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/fragment_Adapter/kb_Adapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/kebiao_tv.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/kb_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/kb_row.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/kb_top.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/config/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/config/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/RightFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/RightFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/changPwd_fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/changPwd_fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/sharedPfUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/sharedPfUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/radio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/radio.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/radio2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/radio2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/changpwd_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/changpwd_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/release/mmvtcc.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/release/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/xueshengkebiao_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/xueshengkebiao_fragment.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,36 +60,107 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <file leaf-file-name="jwcDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+            <state relative-caret-position="64">
+              <caret line="554" column="72" selection-start-line="554" selection-start-column="72" selection-end-line="554" selection-end-column="72" />
+              <folding>
+                <element signature="method#jwcDao#0;class#jwcDao#0" />
+                <element signature="class#2578:3478" />
+                <element signature="docComment;method#getInstance#0;class#jwcDao#0" />
+                <element signature="method#getInstance#0;class#jwcDao#0" />
+                <element signature="method#cookieIsOverdue#0;class#jwcDao#0" />
+                <element signature="method#getCheckCodeImg#0;class#jwcDao#0" />
+                <element signature="method#findViewState#0;class#jwcDao#0" />
+                <element signature="method#Login#0;class#jwcDao#0" />
+                <element signature="method#jwcloginOut#0;class#jwcDao#0" />
+                <element signature="method#queryURL#0;class#jwcDao#0" />
+                <element signature="method#getPersonalInfo#0;class#jwcDao#0" />
+                <element signature="method#getHeadPic#0;class#jwcDao#0" />
+                <element signature="method#getZGrade#0;class#jwcDao#0" />
+                <element signature="method#dealWithGradeHtml#0;class#jwcDao#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+      <file leaf-file-name="xueshengkebiao_fragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+            <state relative-caret-position="169">
+              <caret line="85" column="98" selection-start-line="85" selection-start-column="98" selection-end-line="85" selection-end-column="98" />
+              <folding>
+                <element signature="e#1645#2396#0" expanded="true" />
+                <element signature="e#1925#2370#0" expanded="true" />
+                <element signature="e#2062#2278#0" expanded="true" />
+                <element signature="e#2277#2278#0" expanded="true" />
+                <element signature="e#2369#2370#0" expanded="true" />
+                <element signature="e#2395#2396#0" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kb_Adapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/fragment_Adapter/kb_Adapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13">
+              <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kebiao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getkebiao#0;class#kebiao#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kb_item.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/kb_item.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kb_row.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/kb_row.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" column="27" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="27" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>买买买</find>
-    </findStrings>
-  </component>
-  <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="C:\Users\18433\Desktop\jwc\app\key\2302907599.jks" />
-    <option name="KEY_ALIAS" value="2302907599" />
-    <option name="REMEMBER_PASSWORDS" value="true" />
-    <option name="BUILD_TARGET_KEY" value="apk" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -2221,7 +2270,7 @@
                   </entry>
                 </map>
               </option>
-              <option name="name" value="app" />
+              <option name="name" value="jwc" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.6-all/bcst21l2brirad8k2ben1letg/gradle-4.6/src/announce" />
@@ -2387,24 +2436,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/config/Constant.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/sharedPfUser.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/radio.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/changpwd_fragment.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/changPwd_fragment.java" />
-        <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/kebiao_tv.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/kb_left.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/kb_top.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/kebiao_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/kb_row.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/xueshengkebiao_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/kb_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/fragment_Adapter/kb_Adapter.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="509" />
-    <option name="y" value="10" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="374" />
+    <option name="y" value="20" />
     <option name="width" value="945" />
     <option name="height" value="835" />
   </component>
@@ -2566,8 +2616,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2577,32 +2625,75 @@
             </path>
             <path>
               <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment_Adapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="jwcmmvtc" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+              <item name="other_fragment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="jwc" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="ExportApk.ApkPath" value="C:\Users\18433\Desktop" />
-    <property name="ExportApk.BuildType" value="release" />
-    <property name="ExportApk.Flavors" value="" />
-    <property name="ExportApk.SignV1" value="true" />
-    <property name="ExportApk.SignV2" value="true" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="emulator-5554" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../safeapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../miao-course-table" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1561982141482" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\18433\Desktop\jwc\app\src\main\res\drawable" />
+      <recent name="C:\Users\18433\Desktop\jwc\app\src\main\res\layout" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2751,45 +2842,45 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c8f0ab3a-71a9-4b3b-861e-b51bbc4b66a6" name="Default" comment="" />
-      <created>1561982132614</created>
+      <changelist id="790db87d-1aa1-4958-b12e-b5ba7af0cf44" name="Default" comment="" />
+      <created>1562000646978</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1561982132614</updated>
+      <updated>1562000646978</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="509" y="10" width="945" height="835" extended-state="0" />
+    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Android Profiler" weight="0.5284327" />
+      <window_info anchor="bottom" id="Android Profiler" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info id="Build Variants" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50057274" side_tool="true" weight="0.3283582" />
-      <window_info anchor="right" id="Preview" sideWeight="0.49930653" weight="0.32875723" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32871014" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Preview" weight="0.32875723" />
       <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Logcat" type="SLIDING" weight="0.8252427" />
+      <window_info active="true" anchor="bottom" id="Logcat" visible="true" weight="0.9611651" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23138602" />
-      <window_info anchor="bottom" id="Build" sideWeight="0.49942726" visible="true" weight="0.3283582" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Build" weight="0.32871014" />
       <window_info anchor="right" id="Gradle" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="right" id="Device File Explorer" sideWeight="0.5006935" side_tool="true" weight="0.32875723" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -2798,283 +2889,172 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_touch.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/login7.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/left_fragment.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg7.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg6.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg5.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg4.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg0.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/radio2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="8" lean-forward="true" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/radio.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="126" column="43" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/Service/cookieService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/sharedPfUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="158" column="25" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
-          <folding>
-            <element signature="method#saveUserConfig#0;class#sharedPfUser#0" />
-            <element signature="method#getUserConfig#0;class#sharedPfUser#0" />
-            <element signature="method#getUsername#0;class#sharedPfUser#0" />
-            <element signature="method#saveIslogin#0;class#sharedPfUser#0" />
-            <element signature="method#userIsLogin#0;class#sharedPfUser#0" />
-            <element signature="method#isFristlogin#0;class#sharedPfUser#0" />
-            <element signature="method#saversFristlogn#0;class#sharedPfUser#0" />
-            <element signature="method#getCookie#0;class#sharedPfUser#0" />
-            <element signature="method#setCookie#0;class#sharedPfUser#0" />
-            <element signature="method#addError#0;class#sharedPfUser#0" />
-            <element signature="method#delError#0;class#sharedPfUser#0" />
-            <element signature="method#getError#0;class#sharedPfUser#0" />
-            <element signature="method#setLoginTime#0;class#sharedPfUser#0" />
-            <element signature="method#getLoginTime#0;class#sharedPfUser#0" />
-            <element signature="method#getname#0;class#sharedPfUser#0" />
-            <element signature="method#setname#0;class#sharedPfUser#0" />
-            <element signature="method#setUrlbody#0;class#sharedPfUser#0" />
-            <element signature="method#delUrlbody#0;class#sharedPfUser#0" />
-            <element signature="method#getGrxxUrl#0;class#sharedPfUser#0" />
-            <element signature="method#getCjcxUrl#0;class#sharedPfUser#0" />
-            <element signature="method#getMmxgUrl#0;class#sharedPfUser#0" />
-            <element signature="method#getBjkbcxUrl#0;class#sharedPfUser#0" />
-            <element signature="method#getHPicSrc#0;class#sharedPfUser#0" />
-            <element signature="method#setHPicSrc#0;class#sharedPfUser#0" />
-            <element signature="method#getPwd#0;class#sharedPfUser#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/changpwd_fragment.xml">
-      <provider editor-type-id="android-designer2">
+      <provider editor-type-id="text-editor">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1067">
-          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
-          <folding>
-            <element signature="e#3425#4700#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="598" column="27" selection-start-line="598" selection-start-column="27" selection-end-line="598" selection-end-column="27" />
-          <folding>
-            <element signature="method#queryURL#0;class#jwcDao#0" />
-            <element signature="method#getPersonalInfo#0;class#jwcDao#0" />
-            <element signature="method#getHeadPic#0;class#jwcDao#0" />
-            <element signature="method#dealWithGradeHtml#0;class#jwcDao#0" />
-            <element signature="method#dealWithKebiaoHtml#0;class#jwcDao#0" />
-          </folding>
-        </state>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
+        <state relative-caret-position="292">
+          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+          <folding>
+            <element signature="method#onCreate#0;class#LoginActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="165" column="38" lean-forward="true" selection-start-line="165" selection-start-column="38" selection-end-line="165" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/workFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
+          <folding>
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/left_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/kb_left.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/kebiao_tv.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/kb_top.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/xueshengkebiao_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/kb_row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/kb_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/utils/jwcDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="554" column="72" selection-start-line="554" selection-start-column="72" selection-end-line="554" selection-end-column="72" />
+          <folding>
+            <element signature="method#jwcDao#0;class#jwcDao#0" />
+            <element signature="class#2578:3478" />
+            <element signature="docComment;method#getInstance#0;class#jwcDao#0" />
+            <element signature="method#getInstance#0;class#jwcDao#0" />
+            <element signature="method#cookieIsOverdue#0;class#jwcDao#0" />
+            <element signature="method#getCheckCodeImg#0;class#jwcDao#0" />
+            <element signature="method#findViewState#0;class#jwcDao#0" />
+            <element signature="method#Login#0;class#jwcDao#0" />
+            <element signature="method#jwcloginOut#0;class#jwcDao#0" />
+            <element signature="method#queryURL#0;class#jwcDao#0" />
+            <element signature="method#getPersonalInfo#0;class#jwcDao#0" />
+            <element signature="method#getHeadPic#0;class#jwcDao#0" />
+            <element signature="method#getZGrade#0;class#jwcDao#0" />
+            <element signature="method#dealWithGradeHtml#0;class#jwcDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/entity/kebiao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2058#2697#0" expanded="true" />
-            <element signature="e#2696#2697#0" expanded="true" />
-            <element signature="e#3286#3601#0" expanded="true" />
-            <element signature="e#3600#3601#0" expanded="true" />
-            <element signature="e#3673#3801#0" expanded="true" />
-            <element signature="e#3800#3801#0" expanded="true" />
-            <element signature="method#goToMain#0;class#LoginActivity#0" />
-            <element signature="method#initEdit#0;class#LoginActivity#0" />
-            <element signature="method#onClick#0;class#LoginActivity#0" />
-            <element signature="method#showCheckImg#0;class#LoginActivity#0" />
-            <element signature="e#5125#5665#0" expanded="true" />
-            <element signature="e#5336#5538#0" expanded="true" />
-            <element signature="e#5537#5538#0" expanded="true" />
-            <element signature="e#5664#5665#0" expanded="true" />
-            <element signature="e#6619#8206#0" expanded="true" />
-            <element signature="e#6812#6988#0" expanded="true" />
-            <element signature="e#6987#6988#0" expanded="true" />
-            <element signature="e#7227#7435#0" expanded="true" />
-            <element signature="e#7434#7435#0" expanded="true" />
-            <element signature="e#8205#8206#0" expanded="true" />
-            <element signature="method#setShow_pwd#0;class#LoginActivity#0" />
-            <element signature="e#8988#9235#0" expanded="true" />
-            <element signature="e#9234#9235#0" expanded="true" />
-            <element signature="method#setHide_pwd#0;class#LoginActivity#0" />
-            <element signature="e#9300#9541#0" expanded="true" />
-            <element signature="e#9540#9541#0" expanded="true" />
+            <element signature="method#getkebiao#0;class#kebiao#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/config/Constant.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/xueshengkebiao_fragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="87" column="115" selection-start-line="87" selection-start-column="115" selection-end-line="87" selection-end-column="115" />
+        <state relative-caret-position="169">
+          <caret line="85" column="98" selection-start-line="85" selection-start-column="98" selection-end-line="85" selection-end-column="98" />
           <folding>
-            <element signature="method#onCreate#0;class#MainActivity#0" />
-            <element signature="e#4190#4392#0" expanded="true" />
-            <element signature="e#4391#4392#0" expanded="true" />
-            <element signature="method#showANDelouse#0;class#MainActivity#0" />
-            <element signature="method#showPane#0;class#MainActivity#0" />
-            <element signature="method#loginOut#0;class#MainActivity#0" />
-            <element signature="method#rightStates#0;class#MainActivity#0" />
-            <element signature="method#studentLoginTrue#0;class#MainActivity#0" />
+            <element signature="e#1645#2396#0" expanded="true" />
+            <element signature="e#1925#2370#0" expanded="true" />
+            <element signature="e#2062#2278#0" expanded="true" />
+            <element signature="e#2277#2278#0" expanded="true" />
+            <element signature="e#2369#2370#0" expanded="true" />
+            <element signature="e#2395#2396#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/other_fragment/changPwd_fragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a18433/jwcmmvtc/fragment/fragment_Adapter/kb_Adapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
+        <state relative-caret-position="13">
+          <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
           <folding>
-            <element signature="method#onAttach#0;class#changPwd_fragment#0" />
-            <element signature="method#onCreateView#0;class#changPwd_fragment#0" />
-            <element signature="method#changPed#0;class#changPwd_fragment#0" />
-            <element signature="method#showAlertDialog#0;class#changPwd_fragment#0" />
-            <element signature="method#cleanEd#0;class#changPwd_fragment#0" />
-            <element signature="method#onFocusChange#0;class#changPwd_fragment#0" />
-            <element signature="class#tuichu#0;class#changPwd_fragment#0" />
-            <element signature="method#setShow_pwd#0;class#changPwd_fragment#0" />
-            <element signature="method#setHide_pwd#0;class#changPwd_fragment#0" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
         </state>
       </provider>
     </entry>

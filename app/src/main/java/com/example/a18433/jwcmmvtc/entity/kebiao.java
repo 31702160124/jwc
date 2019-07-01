@@ -1,8 +1,11 @@
 package com.example.a18433.jwcmmvtc.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class kebiao {
     //学年
-    private String Time,Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday;
+    private String Time, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday;
 
     public String getTime() {
         return Time;
@@ -66,5 +69,23 @@ public class kebiao {
 
     public void setSunday(String sunday) {
         Sunday = sunday;
+    }
+
+    public static List<List<String>> getkebiao(List<kebiao> kebiaos) {
+        ArrayList<List<String>> base = new ArrayList<>();
+        for (int i = 0; i < kebiaos.size(); i++) {
+            List<String> arrayList = new ArrayList<>();
+            arrayList.add(kebiaos.get(i).getTime());
+            arrayList.add(kebiaos.get(i).getMonday());
+            arrayList.add(kebiaos.get(i).getThursday());
+            arrayList.add(kebiaos.get(i).getWednesday());
+            arrayList.add(kebiaos.get(i).getThursday());
+            arrayList.add(kebiaos.get(i).getFriday());
+            arrayList.add(kebiaos.get(i).getSaturday());
+            arrayList.add(kebiaos.get(i).getSunday());
+            base.add(arrayList);
+        }
+
+        return base;
     }
 }

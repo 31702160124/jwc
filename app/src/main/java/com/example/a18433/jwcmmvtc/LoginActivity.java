@@ -46,6 +46,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView Tv_err;
     private RelativeLayout login_tv;
     private Switch show_pwd;
+    private Runnable runnable;
+    private Handler handler;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(runnable);
+    }
 
     @SuppressLint("NewApi")
     @Override
@@ -94,15 +102,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         });
-        final Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
+        handler = new Handler();
+        runnable = new Runnable() {
             @Override
             public void run() {
                 login_tv.setBackground(Constant.getRandm(Constant.loginarray));
-                handler.postDelayed(this,5000);
+                handler.postDelayed(this, 5000);
             }
         };
-        handler.postDelayed(runnable,100);
+        handler.postDelayed(runnable, 100);
         Tv_err = (TextView) findViewById(R.id.Tv_err);
         user = (EditText) findViewById(R.id.user);
         pwd = (EditText) findViewById(R.id.pwd);

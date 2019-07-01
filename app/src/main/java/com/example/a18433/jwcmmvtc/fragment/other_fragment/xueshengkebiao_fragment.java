@@ -7,9 +7,13 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.bin.david.form.core.SmartTable;
 import com.bin.david.form.data.column.Column;
@@ -17,20 +21,25 @@ import com.bin.david.form.data.style.FontStyle;
 import com.bin.david.form.data.table.TableData;
 import com.example.a18433.jwcmmvtc.R;
 import com.example.a18433.jwcmmvtc.entity.kebiao;
+import com.example.a18433.jwcmmvtc.fragment.fragment_Adapter.kb_Adapter;
 
 import java.util.ArrayList;
 
+import static com.example.a18433.jwcmmvtc.entity.kebiao.getkebiao;
 import static com.example.a18433.jwcmmvtc.fragment.workFragment.getKebiaoList;
 
 public class xueshengkebiao_fragment extends Fragment {
     private ProgressDialog progressDialog;
-    private SmartTable<Integer> table;
+    private ListView ls_kb;
     private ArrayList<kebiao> dataList = null;
+    private LinearLayout top_kb;
+    private kb_Adapter kb_adapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.xueshengkebiao_fragment, null);
-        table = (SmartTable<Integer>) view.findViewById(R.id.kebiao_tv);
+        top_kb = (LinearLayout) view.findViewById(R.id.top_kb);
+        ls_kb = (ListView) view.findViewById(R.id.ls_kb);
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("loading");
         progressDialog.show();
@@ -64,24 +73,16 @@ public class xueshengkebiao_fragment extends Fragment {
      * 初始化表格
      */
     private void initTable(ArrayList<kebiao> dataList) {
-        Column<String> Time = new Column<>("Time", "Time");
-        Column<String> Monday = new Column<>("Monday", "Monday");
-        Column<String> Tuesday = new Column<>("Tuesday", "Tuesday");
-        Column<String> Wednesday = new Column<>("Wednesday", "Wednesday");
-        Column<String> Thursday = new Column<>("Thursday", "Thursday");
-        Column<String> Friday = new Column<>("Friday", "Friday");
-        Column<String> Saturday = new Column<>("Saturday", "Saturday");
-        Column<String> Sunday = new Column<>("Sunday", "Sunday");
-
-        Time.setFixed(true);
-        TableData tableData = new TableData<kebiao>("", dataList,
-                Time, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
-        table.getConfig()
-                .setContentStyle(new FontStyle(24, Color.rgb(68, 136, 187)))
-                .setColumnTitleStyle(new FontStyle(24, Color.BLACK))
-                .setHorizontalPadding(20)
-                .setVerticalPadding(20);
-
-        table.setTableData(tableData);
+        for (int t = 0; t < getkebiao(dataList).get(0).size(); t++) {
+            View tp_tv = LayoutInflater.from(getContext()).inflate(R.layout.kb_top, null);
+            TextView title = (TextView) tp_tv.findViewById(R.id.t_title);
+            title.setText(getkebiao(dataList).get(0).get(t));
+            title.setEms(9);
+            title.setWidth(250);
+            top_kb.addView(tp_tv);
+        }
+        kb_adapter = new kb_Adapter(getContext(),dataList,7);
+        ls_kb.setAdapter(kb_adapter);
+        Log.i("课表", "initTable: " + dataList.size() + dataList.get(0) + getkebiao(dataList).get(0));
     }
 }
