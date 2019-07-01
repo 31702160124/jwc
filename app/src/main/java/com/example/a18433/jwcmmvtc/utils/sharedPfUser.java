@@ -181,11 +181,17 @@ public class sharedPfUser {
         editor.commit();
     }
 
-    public static void savePwd(String password) {
+    public static void setPwd(String password) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userConfig", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("password", Md5.JM(password));
         editor.commit();
+    }
+
+    public static String getPwd() {
+        sharedPreferences = context.getSharedPreferences("userConfig", 0);
+        String HPicSrc = sharedPreferences.getString("password", "");
+        return Md5.JM(HPicSrc);
     }
 
 }

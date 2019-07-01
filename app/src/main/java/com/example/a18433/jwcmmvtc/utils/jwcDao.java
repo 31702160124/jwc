@@ -274,7 +274,7 @@ public class jwcDao {
         Request request = new Request.Builder()
                 .url(Constant.loginOutUrl + username)
                 .addHeader(jwcheader[0], jwcheader[1])
-                .addHeader(jwcheader[2], jwcheader[3])
+                .addHeader(jwcheader[2], jwcheader[3] + username)
                 .addHeader(jwcheader[4], getCookie())
                 .post(body)
                 .build();
@@ -408,7 +408,7 @@ public class jwcDao {
         // GET 学生成绩查询页面 得到 __VIEWSTATE
         Request request = new Request.Builder()
                 .url(Constant.baseurl + getCjcxUrl())
-                .addHeader(jwcheader[2], jwcheader[3])
+                .addHeader(jwcheader[2], jwcheader[3] + username)
                 .addHeader(jwcheader[4], getCookie())
                 .build();
         try {
@@ -437,7 +437,7 @@ public class jwcDao {
         Request request2 = new Request.Builder()
                 .url(Constant.baseurl + getCjcxUrl())
                 .addHeader(jwcheader[0], jwcheader[1])
-                .addHeader(jwcheader[2], jwcheader[3])
+                .addHeader(jwcheader[2], jwcheader[3] + username)
                 .addHeader(jwcheader[4], getCookie()).post(body)
                 .build();
         try {
@@ -503,7 +503,7 @@ public class jwcDao {
         String strHTML = "";
         Request request = new Request.Builder()
                 .url(Constant.baseurl + getBjkbcxUrl())
-                .addHeader(jwcheader[2], jwcheader[3])
+                .addHeader(jwcheader[2], jwcheader[3] + username)
                 .addHeader(jwcheader[4], getCookie())
                 .build();
         try {
@@ -558,7 +558,8 @@ public class jwcDao {
     private String getChangpwdVss() {
         Request request = new Request.Builder()
                 .url(Constant.baseurl + getMmxgUrl())
-                .addHeader(jwcheader[2], jwcheader[3])
+                .addHeader(jwcheader[2], jwcheader[3] + username)
+                .addHeader(jwcheader[4], getCookie())
                 .build();
         String vss = null;
         try {
@@ -578,10 +579,9 @@ public class jwcDao {
      * @return String result
      */
     public String changePwd(String oldPwd, String newPwd) {
-
         String vss = getChangpwdVss();
         if (vss == null) {
-            vss = getChangpwdVss();
+            vss = "dDwtMzg5NzE5MDc3Ozs+SGJXPq6dHHqtmWcPNRKJMexpc0I=";
         }
 
         RequestBody body = new FormBody.Builder()
@@ -593,7 +593,9 @@ public class jwcDao {
                 .build();
         Request request = new Request.Builder()
                 .url(Constant.baseurl + getMmxgUrl())
-                .addHeader(jwcheader[2], jwcheader[3])
+                .addHeader(jwcheader[0], jwcheader[1])
+                .addHeader(jwcheader[2], jwcheader[3] + username)
+                .addHeader(jwcheader[4], getCookie())
                 .post(body)
                 .build();
 
@@ -601,10 +603,9 @@ public class jwcDao {
         try {
             Response response = client.newCall(request).execute();
             html = response.body().string();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         String pattern = "<script language=\\'javascript\\'>alert\\(\\'(.*?)\\'\\);.*?</script>";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(html);
@@ -613,6 +614,7 @@ public class jwcDao {
             //            m.group();
             result = m.group(1);
         }
+        Log.i("买买买", "changePwd: "+result);
         return result;
     }
 

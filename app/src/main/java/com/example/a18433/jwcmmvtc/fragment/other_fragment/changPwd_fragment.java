@@ -8,33 +8,42 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Switch;
 
 import com.example.a18433.jwcmmvtc.R;
+import com.example.a18433.jwcmmvtc.Service.cookieService;
 import com.example.a18433.jwcmmvtc.config.Constant;
+
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getPwd;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.setPwd;
 
 /**
  * Created by Administrator on 2019/7/1.
  */
 
-public class changpwd_fragment extends Fragment {
+public class changPwd_fragment extends Fragment implements View.OnFocusChangeListener {
     private EditText old_pwd, new_pwd1, new_pwd2;
     private String old_pwdstr, new_pwd1str, new_pwd2str;
     private Button chang_pwd;
-    private LinearLayout chang_pwd_tv;
+    private RelativeLayout chang_pwd_tv;
     private tuichu tuichu;
+    private Switch show_pwd;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        tuichu = (changpwd_fragment.tuichu) context;
+        tuichu = (changPwd_fragment.tuichu) context;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -42,19 +51,35 @@ public class changpwd_fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.changpwd_fragment, null);
-        setRetainInstance(true);
         init(view);
         return view;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void init(View view) {
-        chang_pwd_tv = (LinearLayout) view.findViewById(R.id.chang_pwd_tv);
-        chang_pwd_tv.setBackground(Constant.getRandm(Constant.loginarray));
+        chang_pwd_tv = (RelativeLayout) view.findViewById(R.id.chang_pwd_tv);
         old_pwd = (EditText) view.findViewById(R.id.old_pwd);
         new_pwd1 = (EditText) view.findViewById(R.id.new_pwd1);
         new_pwd2 = (EditText) view.findViewById(R.id.new_pwd2);
         chang_pwd = (Button) view.findViewById(R.id.chang_pwd);
+        old_pwd.setOnFocusChangeListener(this);
+        new_pwd1.setOnFocusChangeListener(this);
+        new_pwd2.setOnFocusChangeListener(this);
+        chang_pwd.setOnFocusChangeListener(this);
+        if (!getPwd().isEmpty()) {
+            old_pwd.setText(getPwd());
+        }
+        show_pwd = (Switch) view.findViewById(R.id.show_pwd);
+        show_pwd.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    setHide_pwd();
+                } else {
+                    setShow_pwd();
+                }
+            }
+        });
         chang_pwd.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
@@ -65,8 +90,6 @@ public class changpwd_fragment extends Fragment {
                         manager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                         changPed();
                     }
-                } else {
-                    manager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.SHOW_IMPLICIT);
                 }
             }
         });
@@ -79,29 +102,49 @@ public class changpwd_fragment extends Fragment {
         // 判断参数是否为空
         if (old_pwdstr.equals("")) {
             showAlertDialog("请输入原密码");
-            //            Toast.makeText(getActivity(), "请输入原密码", Toast.LENGTH_SHORT).show();
             return;
         }
         if (new_pwd1str.equals("") | new_pwd2str.equals("")) {
             showAlertDialog("请输入新密码");
-            //            Toast.makeText(getActivity(), "请输入新密码", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (new_pwd2str.equals("")) {
+            showAlertDialog("请输入重密码");
             return;
         }
         if (new_pwd1str.equals(new_pwd2str)) {
             if (new_pwd1str.length() < 6 | new_pwd2str.length() < 6) {
+                cleanEd();
                 showAlertDialog("密码小于6位");
                 return;
             }
-            if (new_pwd1str.equals("123456") | new_pwd1str.equals("000000")) {
-                showAlertDialog("密码不能为“123456”或“000000”");
-                //                Toast.makeText(getActivity(), "密码不能为“123456”或“000000”", Toast.LENGTH_SHORT).show();
+            if (new_pwd1str.equals("123456") | new_pwd1str.equals("000000") | new_pwd1str.equals(getPwd())) {
+                cleanEd();
+                showAlertDialog("密码不能为“123456”或“000000”和原密码相同");
                 return;
             }
-            tuichu.tuichu();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    final String status = cookieService.getJwcdao().changePwd(old_pwdstr, new_pwd1str);
+                    if (status.contains("修改成功")) {
+                        setPwd(new_pwd1str);
+                        tuichu.tuichu();
+                    } else {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showAlertDialog(status);
+                            }
+                        });
+                    }
+                    Log.i("修改密码", "run: " + status);
+                }
+            }).start();
         } else {
+            cleanEd();
             showAlertDialog("两次新密码不相等");
             return;
-            //            Toast.makeText(getActivity(), "两次新密码不相等", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -123,7 +166,50 @@ public class changpwd_fragment extends Fragment {
         dialog.show();
     }
 
+    private void cleanEd() {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                new_pwd1.setText("");
+                new_pwd2.setText("");
+            }
+        });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    public void onFocusChange(View view, boolean b) {
+        if (b) {
+            chang_pwd_tv.setBackground(Constant.getRandm(Constant.loginarray));
+        }
+    }
+
     public interface tuichu {
         void tuichu();
     }
+
+    private void setShow_pwd() {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                HideReturnsTransformationMethod show = HideReturnsTransformationMethod.getInstance();
+                old_pwd.setTransformationMethod(show);
+                new_pwd1.setTransformationMethod(show);
+                new_pwd2.setTransformationMethod(show);
+            }
+        });
+    }
+
+    private void setHide_pwd() {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                PasswordTransformationMethod hide = PasswordTransformationMethod.getInstance();
+                old_pwd.setTransformationMethod(hide);
+                new_pwd1.setTransformationMethod(hide);
+                new_pwd2.setTransformationMethod(hide);
+            }
+        });
+    }
+
 }

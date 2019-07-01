@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.a18433.jwcmmvtc.R;
-import com.example.a18433.jwcmmvtc.fragment.other_fragment.changpwd_fragment;
+import com.example.a18433.jwcmmvtc.fragment.other_fragment.changPwd_fragment;
 import com.example.a18433.jwcmmvtc.fragment.other_fragment.other_fragment;
 import com.example.a18433.jwcmmvtc.fragment.other_fragment.studentchenji_fragment;
 import com.example.a18433.jwcmmvtc.fragment.other_fragment.studentinfo_fragment;
@@ -24,7 +24,7 @@ public class RightFragment extends Fragment {
     private studentinfo_fragment f1;
     private studentchenji_fragment f2;
     private xueshengkebiao_fragment f3;
-    private changpwd_fragment f4;
+    private changPwd_fragment f4;
     private other_fragment f0;
     private final static String TAG = "学生";
 
@@ -35,7 +35,7 @@ public class RightFragment extends Fragment {
         f1 = new studentinfo_fragment();
         f2 = new studentchenji_fragment();
         f3 = new xueshengkebiao_fragment();
-        f4 = new changpwd_fragment();
+        f4 = new changPwd_fragment();
     }
 
     @Nullable

@@ -18,7 +18,7 @@ import com.example.a18433.jwcmmvtc.Service.cookieService;
 import com.example.a18433.jwcmmvtc.config.Constant;
 import com.example.a18433.jwcmmvtc.fragment.LeftFragment;
 import com.example.a18433.jwcmmvtc.fragment.RightFragment;
-import com.example.a18433.jwcmmvtc.fragment.other_fragment.changpwd_fragment;
+import com.example.a18433.jwcmmvtc.fragment.other_fragment.changPwd_fragment;
 import com.example.a18433.jwcmmvtc.fragment.workFragment;
 
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.delError;
@@ -30,7 +30,7 @@ import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.userIsLogin;
 
 
 public class MainActivity extends FragmentActivity implements RightFragment.showPane,
-        LeftFragment.closePane, changpwd_fragment.tuichu {
+        LeftFragment.closePane, changPwd_fragment.tuichu {
     public SlidingPaneLayout slp;
     public volatile static Boolean MainACTIVITYFlg = true;
     public static Thread thread;
@@ -79,10 +79,15 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onPanelClosed(@NonNull View panel) {
-                getSupportFragmentManager()
-                        .findFragmentById(R.id.left_fragment)
-                        .getView()
-                        .findViewById(R.id.img_Left_tv).setBackground(Constant.getRandm(Constant.bgarray));
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        getSupportFragmentManager()
+                                .findFragmentById(R.id.left_fragment)
+                                .getView()
+                                .findViewById(R.id.img_Left_tv).setBackground(Constant.getRandm(Constant.bgarray));
+                    }
+                });
             }
         });
         leftFragment = (LeftFragment) getSupportFragmentManager().findFragmentById(R.id.left_fragment);
@@ -101,7 +106,12 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
             public void run() {
                 while (MainACTIVITYFlg) {
                     if (getCookie().isEmpty()) {
-                        loginOut();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                loginOut();
+                            }
+                        });
                     }
                 }
             }
@@ -120,7 +130,12 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
 
     @Override
     public void showPane() {
-        slp.openPane();
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                slp.openPane();
+            }
+        });
     }
 
     @Override
@@ -141,7 +156,12 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
 
     @Override
     public void rightStates(String content, int id) {
-        slp.closePane();
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                slp.closePane();
+            }
+        });
         if (getCookie().isEmpty()) {
             loginOut();
         } else {
@@ -160,11 +180,6 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
             workFragment = new workFragment();
             getSupportFragmentManager().beginTransaction().add(workFragment, "work").commit();
         }
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
     }
 
     @Override

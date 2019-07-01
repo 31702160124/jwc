@@ -1,6 +1,7 @@
 package com.example.a18433.jwcmmvtc.config;
 
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 import com.example.a18433.jwcmmvtc.MyApplication;
 import com.example.a18433.jwcmmvtc.R;
@@ -13,17 +14,21 @@ public class Constant {
             R.drawable.cat3, R.drawable.cat4, R.drawable.cat5, R.drawable.cat6};
 
     public static int[] loginarray = {R.drawable.login0, R.drawable.login1, R.drawable.login2,
-            R.drawable.login3, R.drawable.login4, R.drawable.login5, R.drawable.login6};
+            R.drawable.login3, R.drawable.login4, R.drawable.login5, R.drawable.login6, R.drawable.login7};
 
     public static int[] bgarray = {R.drawable.bg0, R.drawable.bg1, R.drawable.bg2,
             R.drawable.bg3, R.drawable.bg4, R.drawable.bg5, R.drawable.bg6, R.drawable.bg7};
 
     public static Drawable getRandm(int[] array) {
         int random = (int) (Math.random() * 100 % 10);
-        if (random > array.length - 1) {
-            random = 4;
+        int i = random;
+        while (random > array.length - 1) {
+            if (random == i) {
+                random = (int) (Math.random() * 100 % 10);
+            }
         }
         int id = array[random];
+        Log.i("随机数", "getRandm: " + random);
         Drawable drawable = MyApplication.getContext().getResources().getDrawable(id);
         return drawable;
     }
