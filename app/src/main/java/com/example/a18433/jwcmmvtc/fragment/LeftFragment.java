@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import com.example.a18433.jwcmmvtc.R;
 import com.example.a18433.jwcmmvtc.Service.cookieService;
-import com.example.a18433.jwcmmvtc.config.Constant;
 
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getname;
@@ -64,6 +63,7 @@ public class LeftFragment extends Fragment {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup

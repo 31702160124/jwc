@@ -43,7 +43,6 @@ public class RightFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.right_fragment, null);
         init(view);
-        setRetainInstance(true);
         return view;
     }
 
