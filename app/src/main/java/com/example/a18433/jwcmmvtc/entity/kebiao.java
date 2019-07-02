@@ -1,7 +1,12 @@
 package com.example.a18433.jwcmmvtc.entity;
 
+import android.util.Log;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class kebiao {
     //学年
@@ -71,21 +76,47 @@ public class kebiao {
         Sunday = sunday;
     }
 
-    public static List<List<String>> getkebiao(List<kebiao> kebiaos) {
-        ArrayList<List<String>> base = new ArrayList<>();
-        for (int i = 0; i < kebiaos.size(); i++) {
-            List<String> arrayList = new ArrayList<>();
-            arrayList.add(kebiaos.get(i).getTime());
-            arrayList.add(kebiaos.get(i).getMonday());
-            arrayList.add(kebiaos.get(i).getThursday());
-            arrayList.add(kebiaos.get(i).getWednesday());
-            arrayList.add(kebiaos.get(i).getThursday());
-            arrayList.add(kebiaos.get(i).getFriday());
-            arrayList.add(kebiaos.get(i).getSaturday());
-            arrayList.add(kebiaos.get(i).getSunday());
-            base.add(arrayList);
-        }
+    public static ArrayList<String> getkebiao(ArrayList<kebiao> kebiaos, int i) {
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add(kebiaos.get(i).getTime());
+        arrayList.add(kebiaos.get(i).getMonday());
+        arrayList.add(kebiaos.get(i).getTuesday());
+        arrayList.add(kebiaos.get(i).getWednesday());
+        arrayList.add(kebiaos.get(i).getThursday());
+        arrayList.add(kebiaos.get(i).getFriday());
+        arrayList.add(kebiaos.get(i).getSaturday());
+        arrayList.add(kebiaos.get(i).getSunday());
+        return arrayList;
+    }
 
-        return base;
+    public static Map<Integer, String[]> getkebiao(ArrayList<kebiao> kebiaos) {
+        Map<Integer, String[]> map = new HashMap<>();
+        for (int i = 0; i < kebiaos.size(); i++) {
+            String[] kb = new String[8];
+            kb[0] = kebiaos.get(i).getTime();
+            kb[1] = kebiaos.get(i).getMonday();
+            kb[2] = kebiaos.get(i).getTuesday();
+            kb[3] = kebiaos.get(i).getWednesday();
+            kb[4] = kebiaos.get(i).getThursday();
+            kb[5] = kebiaos.get(i).getFriday();
+            kb[6] = kebiaos.get(i).getSaturday();
+            kb[7] = kebiaos.get(i).getSunday();
+            map.put(i, kb);
+        }
+        return map;
+    }
+
+    @Override
+    public String toString() {
+        return "kebiao{" +
+                "Time='" + Time + '\'' +
+                ", Monday='" + Monday + '\'' +
+                ", Tuesday='" + Tuesday + '\'' +
+                ", Wednesday='" + Wednesday + '\'' +
+                ", Thursday='" + Thursday + '\'' +
+                ", Friday='" + Friday + '\'' +
+                ", Saturday='" + Saturday + '\'' +
+                ", Sunday='" + Sunday + '\'' +
+                '}';
     }
 }

@@ -12,7 +12,9 @@ import android.widget.TextView;
 import com.example.a18433.jwcmmvtc.R;
 import com.example.a18433.jwcmmvtc.entity.kebiao;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static com.example.a18433.jwcmmvtc.entity.kebiao.getkebiao;
 
@@ -57,18 +59,26 @@ public class kb_Adapter extends BaseAdapter {
         view = LayoutInflater.from(mContext).inflate(R.layout.kb_row, null);
         LinearLayout row = (LinearLayout) view.findViewById(R.id.kb_row);  // 行布局
         if (row != null) row.removeAllViews(); // 清空行
-        for (int i = 1; i <= mColumnNum; i++) {
-            for (int t = 0; t < getkebiao(mDataLists).get(t).size(); t++) {
-                View itemView = LayoutInflater.from(mContext).inflate(R.layout.kb_item, null);
-                TextView itemNameTv = (TextView) itemView.findViewById(R.id.t_tv);
-                itemNameTv.setText(getkebiao(mDataLists).get(i).get(t));
-                itemNameTv.setEms(9);
-                itemNameTv.setWidth(250);
-                // 将每个元素添加到行布局中去
-                row.addView(itemView);
-                Log.i("课表是", "getView: "+getkebiao(mDataLists).get(i).get(t));
-            }
+        for (int i = 0; i < mColumnNum; i++) {
+            View itemView = LayoutInflater.from(mContext).inflate(R.layout.kb_item, null);
+            TextView itemNameTv = (TextView) itemView.findViewById(R.id.t_tv);
+            itemNameTv.setText(getKb(i)[i]);
+            itemNameTv.setEms(9);
+            itemNameTv.setWidth(250);
+            // 将每个元素添加到行布局中去
+            row.addView(itemView);
+            Log.i("课表是", "getView: " + getKb(i)[i]);
         }
         return view;
+    }
+
+    private String[] getKb(int i) {
+        String kb[] = null;
+        for (Integer v : getkebiao((ArrayList<kebiao>) mDataLists).keySet()) {
+            if (v.hashCode()==i){
+                return getkebiao((ArrayList<kebiao>) mDataLists).get(i);
+            }
+        }
+        return kb;
     }
 }
