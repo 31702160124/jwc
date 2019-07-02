@@ -69,19 +69,20 @@ public class xueshengkebiao_fragment extends Fragment {
         return view;
     }
 
-    /**
-     * 初始化表格
-     */
     private void initTable(ArrayList<kebiao> dataList) {
-        for (int t = 0; t < getkebiao(dataList,0).size(); t++) {
+        for (int t = 0; t < getkebiao(dataList, 0).size(); t++) {
             View tp_tv = LayoutInflater.from(getContext()).inflate(R.layout.kb_top, null);
             TextView title = (TextView) tp_tv.findViewById(R.id.t_title);
-            title.setText(getkebiao(dataList,0).get(t));
+            title.setText(getkebiao(dataList, 0).get(t));
             title.setEms(9);
-            title.setWidth(250);
+            if (t == 0)
+                title.setWidth(110);
+            else
+                title.setWidth(250);
+            title.setHeight(100);
             top_kb.addView(tp_tv);
         }
-        kb_adapter = new kb_Adapter(getContext(),dataList,8);
+        kb_adapter = new kb_Adapter(getContext(), dataList, 8);
         ls_kb.setAdapter(kb_adapter);
         Log.i("课表", "initTable: " + dataList.size() + dataList.get(0).toString());
     }

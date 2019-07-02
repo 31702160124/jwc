@@ -86,7 +86,7 @@ public class cookieService extends Service {
                     if (new Date().getTime() - getLoginTime() > 10000) {
                         Log.i(TAG, time + "init: 6秒 执行cookie判断" + "  " + getLoginTime() + "" + getCookie());
                         setLoginTime();
-                        getJwcdao().cookieIsOverdue();
+                        new Thread();
                     }
                 } else {
                     Log.i(TAG, time + "cookie失效 isLoginFlg " + getCookie() + getLoginTime());
@@ -97,7 +97,7 @@ public class cookieService extends Service {
         }
     }
 
-    public static jwcDao getJwcdao() {
+    public synchronized static jwcDao getJwcdao() {
         return jwcDao.getInstance();
     }
 }

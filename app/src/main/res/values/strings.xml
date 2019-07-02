@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">jwcmmvtc</string>
+    <string name="app_name">茂职院学生端</string>
     <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

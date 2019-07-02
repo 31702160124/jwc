@@ -68,6 +68,7 @@
     </LinearLayout>
     <!--验证码-->
     <LinearLayout
+        android:focusableInTouchMode="true"
         android:id="@+id/ll_vertify"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

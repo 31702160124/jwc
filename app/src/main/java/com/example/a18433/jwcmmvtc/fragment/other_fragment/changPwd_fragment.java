@@ -1,6 +1,7 @@
 package com.example.a18433.jwcmmvtc.fragment.other_fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.a18433.jwcmmvtc.R;
 import com.example.a18433.jwcmmvtc.Service.cookieService;
@@ -60,6 +62,7 @@ public class changPwd_fragment extends Fragment implements View.OnFocusChangeLis
         chang_pwd_tv = (RelativeLayout) view.findViewById(R.id.chang_pwd_tv);
         old_pwd = (EditText) view.findViewById(R.id.old_pwd);
         new_pwd1 = (EditText) view.findViewById(R.id.new_pwd1);
+        new_pwd1.setNextFocusDownId(R.id.new_pwd2);
         new_pwd2 = (EditText) view.findViewById(R.id.new_pwd2);
         chang_pwd = (Button) view.findViewById(R.id.chang_pwd);
         old_pwd.setOnFocusChangeListener(this);
@@ -72,7 +75,7 @@ public class changPwd_fragment extends Fragment implements View.OnFocusChangeLis
         show_pwd = (Switch) view.findViewById(R.id.show_pwd);
         show_pwd.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+            public void onCheckedChanged(CompoundButton compoundButton, final boolean b) {
                 if (b) {
                     setHide_pwd();
                 } else {
@@ -82,8 +85,7 @@ public class changPwd_fragment extends Fragment implements View.OnFocusChangeLis
         });
         chang_pwd.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                Log.i("onFocusChange", "onFocusChange: " + view.getId() + hasFocus);
+            public void onFocusChange(View view, final boolean hasFocus) {
                 InputMethodManager manager = ((InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE));
                 if (hasFocus) {
                     if (manager != null) {
@@ -101,26 +103,26 @@ public class changPwd_fragment extends Fragment implements View.OnFocusChangeLis
         new_pwd2str = new_pwd2.getText().toString().trim();
         // 判断参数是否为空
         if (old_pwdstr.equals("")) {
-            showAlertDialog("请输入原密码");
+            showAlertDialog("请输入原密码", old_pwd);
             return;
         }
-        if (new_pwd1str.equals("") | new_pwd2str.equals("")) {
-            showAlertDialog("请输入新密码");
+        if (new_pwd1str.equals("")) {
+            showAlertDialog("请输入新密码", new_pwd1);
             return;
         }
         if (new_pwd2str.equals("")) {
-            showAlertDialog("请输入重密码");
+            showAlertDialog("请输入重密码", new_pwd2);
             return;
         }
         if (new_pwd1str.equals(new_pwd2str)) {
             if (new_pwd1str.length() < 6 | new_pwd2str.length() < 6) {
                 cleanEd();
-                showAlertDialog("密码小于6位");
+                showAlertDialog("密码小于6位", new_pwd1);
                 return;
             }
             if (new_pwd1str.equals("123456") | new_pwd1str.equals("000000") | new_pwd1str.equals(getPwd())) {
                 cleanEd();
-                showAlertDialog("密码不能为“123456”或“000000”和原密码相同");
+                showAlertDialog("密码不能为“123456”或“000000”和原密码相同", new_pwd1);
                 return;
             }
             new Thread(new Runnable() {
@@ -148,14 +150,24 @@ public class changPwd_fragment extends Fragment implements View.OnFocusChangeLis
         }
     }
 
-    private void showAlertDialog(String string) {
+    private void showAlertDialog(String string, final EditText... editText) {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setTitle(string);     //设置对话框标题
 
         //        builder.setIcon(R.drawable.ic_launcher);      //设置对话框标题前的图标
 
-        builder.setPositiveButton("确认", null);
+        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(getContext(), "" + editText.length, Toast.LENGTH_SHORT).show();
+                if (editText.length != 0) {
+                    editText[0].setFocusable(true);
+                    editText[0].setFocusableInTouchMode(true);
+                }
+            }
+        });
 
         builder.setCancelable(false);   //设置按钮是否可以按返回键取消,false则不可以取消
 
@@ -178,17 +190,19 @@ public class changPwd_fragment extends Fragment implements View.OnFocusChangeLis
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
-    public void onFocusChange(View view, boolean b) {
+    public void onFocusChange(View view, final boolean b) {
         if (b) {
             chang_pwd_tv.setBackground(Constant.getRandm(Constant.loginarray));
         }
+
     }
 
     public interface tuichu {
         void tuichu();
+
     }
 
-    private void setShow_pwd() {
+    private synchronized void setShow_pwd() {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -200,7 +214,7 @@ public class changPwd_fragment extends Fragment implements View.OnFocusChangeLis
         });
     }
 
-    private void setHide_pwd() {
+    private synchronized void setHide_pwd() {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {

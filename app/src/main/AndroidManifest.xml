@@ -34,6 +34,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:theme="@style/NoActionBar"
             android:name=".LoginActivity"
             android:label="学生教务管理登入">
             <intent-filter>

@@ -3,8 +3,10 @@ package com.example.a18433.jwcmmvtc;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +18,8 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -58,13 +62,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //沉浸式状态栏
+        //4.4以上设置状态栏为透明
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+        // 5.0以上系统状态栏透明，
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);//设置状态栏颜色和主布局背景颜色相同
+//            window.setStatusBarColor(Color.parseColor("#45b97f"));//设置状态栏为指定颜色
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         init();
         initEdit();
         login.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onFocusChange(View view, boolean hasFocus) {
+            public void onFocusChange(View view, final boolean hasFocus) {
                 Log.i("onFocusChange", "onFocusChange: " + view.getId() + hasFocus);
                 if (hasFocus) {
                     InputMethodManager manager = ((InputMethodManager) getBaseContext().getSystemService(Context.INPUT_METHOD_SERVICE));
@@ -94,7 +113,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         show_pwd = (Switch) findViewById(R.id.Login_show_pwd);
         show_pwd.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+            public void onCheckedChanged(CompoundButton compoundButton, final boolean b) {
                 if (b) {
                     setHide_pwd();
                 } else {
@@ -219,11 +238,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         saveUserConfig(usestr, pwdstr);
                         setname(result[1]);
                         setLoginTime();
-                        try {
-                            goToMain();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+                        showHintsMsg(result[1]);
                         break;
                     default:
                         showCheckImg();
@@ -236,30 +251,36 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void showHintsMsg(String s) {
         Looper.prepare();
-        Toast.makeText(LoginActivity.this, s, Toast.LENGTH_SHORT).show();
+        showAlertDialog(s);
         Looper.loop();
     }
 
-    private void showAlertDialog(String string) {
+    private void showAlertDialog(final String string) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setTitle(string);     //设置对话框标题
 
         //        builder.setIcon(R.drawable.ic_launcher);      //设置对话框标题前的图标
 
-        builder.setPositiveButton("确认", null);
+        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (string.contains("欢迎")) {
+                    goToMain();
+                }
+            }
+        });
 
         builder.setCancelable(true);   //设置按钮是否可以按返回键取消,false则不可以取消
 
         AlertDialog dialog = builder.create();  //创建对话框
 
-        dialog.setCanceledOnTouchOutside(true);      //设置弹出框失去焦点是否隐藏,即点击屏蔽其它地方是否隐藏
+        dialog.setCanceledOnTouchOutside(false);      //设置弹出框失去焦点是否隐藏,即点击屏蔽其它地方是否隐藏
 
         dialog.show();
     }
 
-
-    private void setShow_pwd() {
+    private synchronized void setShow_pwd() {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -269,7 +290,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
-    private void setHide_pwd() {
+    private synchronized void setHide_pwd() {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {

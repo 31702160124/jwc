@@ -23,6 +23,8 @@ import com.example.a18433.jwcmmvtc.fragment.workFragment;
 
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.delError;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getCookie;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getUsername;
+import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.getname;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.isFristlogin;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saveIslogin;
 import static com.example.a18433.jwcmmvtc.utils.sharedPfUser.saversFristlogn;
@@ -51,7 +53,7 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
             window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            //window.setStatusBarColor(Color.TRANSPARENT);//设置状态栏颜色和主布局背景颜色相同
+//            window.setStatusBarColor(Color.TRANSPARENT);//设置状态栏颜色和主布局背景颜色相同
             window.setStatusBarColor(Color.parseColor("#03A9F4"));//设置状态栏为指定颜色
         }
         super.onCreate(savedInstanceState);
@@ -118,8 +120,8 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
         }).start();
     }
 
-    private void showANDelouse() throws Exception {
-        slp.openPane();
+    private synchronized void showANDelouse() throws Exception {
+        showPane();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -129,13 +131,8 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
     }
 
     @Override
-    public void showPane() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                slp.openPane();
-            }
-        });
+    public synchronized void showPane() {
+        slp.openPane();
     }
 
     @Override
@@ -155,7 +152,7 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
     }
 
     @Override
-    public void rightStates(String content, int id) {
+    public synchronized void rightStates(String content, int id) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -174,7 +171,7 @@ public class MainActivity extends FragmentActivity implements RightFragment.show
         MainACTIVITYFlg = true;
         rightFragment.addFragments(4);
         saversFristlogn(false);
-        Toast.makeText(this, "教务管理系统欢迎你", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getname(), Toast.LENGTH_SHORT).show();
         workFragment workFragment = (workFragment) getSupportFragmentManager().findFragmentByTag("work");
         if (workFragment == null) {
             workFragment = new workFragment();
