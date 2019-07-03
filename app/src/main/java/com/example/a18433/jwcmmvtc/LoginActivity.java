@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
@@ -28,7 +27,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.a18433.jwcmmvtc.Service.cookieService;
 import com.example.a18433.jwcmmvtc.config.Constant;
@@ -50,13 +48,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView Tv_err;
     private RelativeLayout login_tv;
     private Switch show_pwd;
-    private Runnable runnable;
-    private Handler handler;
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        handler.removeCallbacks(runnable);
     }
 
     @SuppressLint("NewApi")
@@ -121,15 +116,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         });
-        handler = new Handler();
-        runnable = new Runnable() {
-            @Override
-            public void run() {
-                login_tv.setBackground(Constant.getRandm(Constant.loginarray));
-                handler.postDelayed(this, 5000);
-            }
-        };
-        handler.postDelayed(runnable, 100);
+        login_tv.setBackground(Constant.getRandm(Constant.loginarray));
         Tv_err = (TextView) findViewById(R.id.Tv_err);
         user = (EditText) findViewById(R.id.user);
         pwd = (EditText) findViewById(R.id.pwd);
