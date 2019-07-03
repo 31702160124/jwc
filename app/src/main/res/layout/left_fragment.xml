@@ -49,7 +49,7 @@
                 android:id="@+id/lv_left"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/radio"
+                android:background="#5e78c8"
                 android:entries="@array/languages"
                 android:scrollbars="none"></ListView>
 
