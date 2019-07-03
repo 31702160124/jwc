@@ -59,7 +59,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         handler.removeCallbacks(runnable);
     }
 
-    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //沉浸式状态栏
@@ -96,7 +95,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
-    @SuppressLint("NewApi")
     @Override
     protected void onStart() {
         super.onStart();
